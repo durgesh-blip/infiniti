@@ -12539,6 +12539,7 @@ figcaption {
   margin-top: 15px;
   margin-bottom: 0;
 }
+
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .section-title h2.title {
     font-size: 38px;
