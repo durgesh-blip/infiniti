@@ -22,28 +22,18 @@ setInterval(()=>{
   showSlide(index1);
 },3000);
 
+const cards = document.querySelectorAll(".tech-card");
 
+cards.forEach(card => {
+  card.addEventListener("mouseenter", () => {
+    cards.forEach(c => c.classList.remove("active"));
+    card.classList.add("active");
+  });
 
-
-const slider=document.querySelector(".tech-slider");
-let isDown=false,startX,scrollLeft;
-
-slider.addEventListener("mousedown",e=>{
-  isDown=true;
-  startX=e.pageX-slider.offsetLeft;
-  scrollLeft=slider.scrollLeft;
+  card.addEventListener("mouseleave", () => {
+    cards.forEach(c => c.classList.remove("active"));
+  });
 });
-
-slider.addEventListener("mouseleave",()=>isDown=false);
-slider.addEventListener("mouseup",()=>isDown=false);
-
-slider.addEventListener("mousemove",e=>{
-  if(!isDown) return;
-  e.preventDefault();
-  const x=e.pageX-slider.offsetLeft;
-  slider.scrollLeft=scrollLeft-(x-startX);
-});
-
 
 
  const customerAwardTrack = document.getElementById("awardTrack");
