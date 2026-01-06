@@ -104,3 +104,9 @@ slider.addEventListener("mousemove",e=>{
             });
         });
   
+
+
+
+
+
+        
