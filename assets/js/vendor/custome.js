@@ -36,6 +36,11 @@ cards.forEach(card => {
 });
 
 
+
+
+
+// one end 
+
  const customerAwardTrack = document.getElementById("awardTrack");
     const customerAwardCards = document.querySelectorAll(".award-card");
 
@@ -71,7 +76,8 @@ cards.forEach(card => {
     // START AUTO SCROLL
     setInterval(customerAutoScroll, 20);
    
-
+  
+    // two end 
 
 
    
@@ -94,6 +100,7 @@ cards.forEach(card => {
             });
         });
   
+// three end 
 
 
 
