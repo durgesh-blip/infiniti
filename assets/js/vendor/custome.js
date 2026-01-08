@@ -102,8 +102,30 @@ cards.forEach(card => {
   
 // three end 
 
+document.addEventListener("DOMContentLoaded", function () {
+
+  const header = document.querySelector(".navbar");
+  const hero = document.querySelector(".page-hero");
+
+  if (!header) return; // safety
+
+  let triggerHeight = 100;
+
+  if (hero) {
+    triggerHeight = hero.offsetHeight - header.offsetHeight;
+  }
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > triggerHeight) {
+      header.classList.add("is-fixed");
+    } else {
+      header.classList.remove("is-fixed");
+    }
+  });
+
+});
+
+// four 
 
 
 
-
-        

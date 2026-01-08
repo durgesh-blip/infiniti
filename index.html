@@ -414,7 +414,7 @@
         <!-- RIGHT BUTTONS -->
         </header>
 
-         <section class="hero">
+         <section class="hero page-hero">
         <video autoplay muted loop playsinline class="hero-video">
             <source src="./video/home_banner_video.mp4" type="video/mp4">
         </video>
@@ -2963,7 +2963,6 @@
     </script>
 
 <script>
-/* SHOW ON PAGE LOAD */
 window.addEventListener("load",()=>{
  setTimeout(()=>{
   document.getElementById("hpPopup").style.display="flex";
@@ -2980,7 +2979,6 @@ const popupSlides = document.querySelectorAll(".homepage-slide");
 const popupDotBox = document.querySelector(".homepage-slider-dots");
 let popupIndex = 0;
 
-/* create dots */
 popupSlides.forEach((s,idx)=>{
  let dot=document.createElement("span");
  if(idx===0) dot.classList.add("active");
@@ -3000,14 +2998,12 @@ function popupShowSlide(n){
  popupIndex=n;
 }
 
-/* auto play */
 setInterval(()=>{
  popupIndex=(popupIndex+1)%popupSlides.length;
  popupShowSlide(popupIndex);
 },4000);
 
 
-/* CLOSE */
 function closePopup(){
  document.getElementById("hpPopup").style.display="none";
  document.body.style.overflow="auto";

@@ -7,25 +7,37 @@ body{
 
 
 
+/* DEFAULT STATE (banner ke upar) */
 .navbar{
-  position:fixed !important;
-  top:0!important;
-  left:0!important;
-  width:100%!important;
-  padding:16px 40px!important;
-  display:flex!important;
-  justify-content:space-between!important;
-  align-items:center!important;
-  z-index:9999!important;
-  color:#fff!important;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:9999;
+  padding:16px 40px;
+
   background:linear-gradient(
     to bottom,
     rgba(5,20,45,.65),
     rgba(5,20,45,.15),
     rgba(5,20,45,0)
-  ) !important;
-  backdrop-filter:blur(4px) !important;
+  );
+
+  transition:all .3s ease;
 }
+
+.navbar.is-fixed{
+  position:fixed;
+  background:#ffffff;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.navbar.is-fixed a,
+.navbar.is-fixed .item,
+.navbar.is-fixed li{
+  color:#111 !important;
+}
+
 
 .logo img {
     width: 260px !important;
@@ -504,6 +516,9 @@ body{
   from{ transform:translateX(0); }
   to{ transform:translateX(-50%); }
 }
+
+
+
 /* home page trusted client section end  */
 
 
@@ -702,6 +717,32 @@ background:linear-gradient(
   box-shadow:0 18px 35px rgba(0,0,0,.35);
   background:linear-gradient(#0a4db3,#033375);
 }
+
+
+/* bg image for about page  */
+
+.homepage-statssection-stats.bg-image{
+  position:relative;
+  padding:80px 20px;
+  background:linear-gradient(140deg,#062b5c,#0a4aa3);
+  overflow:hidden;
+}
+
+.homepage-statssection-stats.bg-image::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url("../images/peoples.png") center/cover no-repeat;
+
+  opacity:.2;
+}
+
+.homepage-statssection-stats.bg-image .homepage-stat-card{
+  position:relative;
+  z-index:2;
+}
+
+/* bg image for about page  */
 
 /* counter section below the banner  */
 
@@ -1829,64 +1870,220 @@ background: linear-gradient(
 
 
 
-/*/////////////////////////////////////////////
-/////////// responsive css  /////////////////
-///////////////////////////////////////////*/
+/*///////////////////////////////////////////////////////
+/////////// service page css statrt here  ////////////////
+/////////////////////////////////////////////////////////*/
 
-@media(max-width:1100px){
-  .why-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
+/* .service-page-software-hero{
+  position:relative;
+  padding:122px 97px 80px;
+
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,.75),
+    rgba(255,255,255,.65),
+    rgba(255,255,255,.4),
+    rgba(255,255,255,.2)
+  ),
+   
+
+  background-size:cover;
+  background-position:center;
+} */
+.service-page-software-hero{
+  position:relative;
+  padding:122px 97px 80px;
+  min-height:100vh;
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(255,255,255,.75) 0%,
+      rgba(255,255,255,.65) 40%,
+      rgba(255,255,255,.45) 60%,
+      rgba(255,255,255,.25) 100%
+    ),
+   url("../images/background-about.jpeg");
+
+  background-size:cover;
+  background-position:center;
 }
 
-@media(max-width:650px){
-  .why-grid{
-    grid-template-columns:1fr;
-  }
+.service-page-software-hero::before{
+  content: "";
+  /* position: absolute; */
+  inset: 0;
+  background: rgba(255,255,255,0.9);
+  z-index: 0;
+}
+.service-page-software-hero > *{
+  position: relative;
+  z-index: 1;
+}
+
+.service-page-hero-container{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  align-items:flex-start;
+  gap:60px;
+}
+
+/* LEFT TEXT */
+.service-page-hero-left h1{
+  font-size:40px;
+  margin:0 0 10px;
+  color: #000;
+}
+
+.service-page-hero-left h1 span{
+  color:#0766ff;
+  font-size: 40px;
+}
+
+.service-page-hero-left h2{
+  margin:10px 0 20px;
+  font-size: 23px;
+  color: #000;
+}
+
+.service-page-hero-left p{
+  color:#333;
+  max-width:520px;
+  line-height:1.6;
+  margin-bottom: 0px;
+  font-size: 16px;
+}
+
+.service-page-hero-left ul{
+  margin-top:20px;
+  padding-left:20px;
+}
+
+.service-page-hero-left ul li {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 15px;
+}
+
+.service-page-cta-btn{
+  display:inline-block;
+  padding:12px 22px;
+  background:#0766ff;
+  color:#fff;
+  border-radius:40px;
+  text-decoration:none;
+}
+
+
+.service-page-hero-right{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:20px;
+}
+
+.service-page-big-card{
+  grid-column:1 / 3;
+  text-align:center;
+  background:#fff;
+  border-radius:20px;
+  padding:10px;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.service-page-big-card img{
+  width:500px;
+      height: 375px;
+}
+
+/* ================= TABS Start ================= */
+/* ================================
+   SERVICE PAGE TABS – FINAL STYLE
+   ================================ */
+
+.service-page-below-the-counter-service-tabs{
+  max-width:1200px;
+  margin:80px auto;
+  display:flex;
+  border-radius:28px;
+  overflow:hidden;
+  background:linear-gradient(135deg,#0b2f66,#1e63c7);
+  padding:18px;
+  box-shadow:0 30px 80px rgba(0,0,0,.25);
+}
+
+
+.service-page-below-the-counter-tab-menu{
+  width:55%;
+  background:#1a6df2;
+  padding:40px 30px;
+  color:#cfe4ff;
+  border-radius:20px 0 0 20px;
+}
+
+
+.service-page-below-the-counter-tab-item{
+  padding:22px 10px;
+  font-size:22px;
+  font-weight:500;
+  cursor:pointer;
+  border-bottom:1px solid rgba(255,255,255,.25);
+  transition:.3s ease;
+  line-height:1.4;
+}
+
+.service-page-below-the-counter-tab-item:hover{
+  color:#ffffff;
+}
+
+.service-page-below-the-counter-tab-item.active{
+  color:#ffffff;
+  font-weight:700;
+}
+
+
+.service-page-below-the-counter-tab-content{
+  width:45%;
+  background:#fff;
+  padding:60px 50px;
+  border-radius:0 20px 20px 0;
+}
+
+.service-page-below-the-counter-content{
+  display:none;
+}
+
+.service-page-below-the-counter-content.show{
+  display:block;
+}
+
+.service-page-below-the-counter-content img{
+  width:56px;
+  height:56px;
+  margin-bottom:20px;
+  background:#fff;
+  border-radius:50%;
+  padding:6px;
+}
+
+.service-page-below-the-counter-content h2{
+  font-size:26px;
+  margin:0 0 15px;
+  color:#000;
+}
+
+
+.service-page-below-the-counter-content p{
+  font-size:15px;
+  line-height:1.7;
+  color:#333;
+  margin:15px 0;
+}
+.service-page-below-the-counter-content img{
+  background:#eaf2ff;  
 }
 
 
 
-@media(max-width:768px){
-  .faq{
-    grid-template-columns:1fr;
-  }
-}
 
-
-
-@media(max-width:767px){
-  .home-cert-card img{
-    width:110px;
-  }
-}
-
-
-@media(max-width:768px){
-
-  .homepage-statssection-stats{
-    gap:12px;
-  }
-  
-  .homepage-statssection-stats .homepage-stat-card{
-    min-width:160px;
-    padding:20px;
-  }
-
-  .homepage-statssection-stats .homepage-stat-card h2{
-    font-size:32px;
-  }
-}
-
-
-
-@media (max-width: 992px) {
-  .consult-wrapper {
-    grid-template-columns: 1fr;
-    gap: 80px;
-  }
-
-  .left-consult h1 {
-    font-size: 46px;
-  }
-}

@@ -1,0 +1,93 @@
+
+@media(max-width:1100px){
+  .why-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:650px){
+  .why-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+
+
+@media(max-width:768px){
+  .faq{
+    grid-template-columns:1fr;
+  }
+}
+
+
+
+@media(max-width:767px){
+  .home-cert-card img{
+    width:110px;
+  }
+}
+
+
+@media(max-width:768px){
+
+  .homepage-statssection-stats{
+    gap:12px;
+  }
+  
+  .homepage-statssection-stats .homepage-stat-card{
+    min-width:160px;
+    padding:20px;
+  }
+
+  .homepage-statssection-stats .homepage-stat-card h2{
+    font-size:32px;
+  }
+}
+
+
+
+@media (max-width: 992px) {
+  .consult-wrapper {
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+
+  .left-consult h1 {
+    font-size: 46px;
+  }
+}
+
+
+
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .service-page-hero-container,
+  .service-page-below-the-counter-service-tabs{
+    flex-direction:column;
+  }
+
+  .service-page-below-the-counter-tab-menu,
+  .service-page-below-the-counter-tab-content{
+    width:100%;
+  }
+}
+
+
+
+@media(max-width:900px){
+  .service-page-below-the-counter-service-tabs{
+    flex-direction:column;
+    padding:15px;
+  }
+
+  .service-page-below-the-counter-tab-menu,
+  .service-page-below-the-counter-tab-content{
+    width:100%;
+    border-radius:20px;
+  }
+
+  .service-page-below-the-counter-tab-menu{
+    margin-bottom:15px;
+  }
+}
