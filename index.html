@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link href="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/custome.css">
@@ -30,63 +30,82 @@
 
 
 <style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
-*{
- box-sizing:border-box;
- font-family:Arial, Helvetica, sans-serif;
-}
+    .homepage-popup-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(6, 15, 35, 0.7);
+        backdrop-filter: blur(8px);
+        display: none;
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-.homepage-popup-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.55);
-  backdrop-filter:blur(6px);
-  display:none;
-  z-index:99999;
+    .homepage-popup-wrapper {
+        width: 700px;
+        max-width: 95%;
+        background: #ffffff;
+        border-radius: 26px;
+        box-shadow: 0 40px 90px rgba(0, 0, 0, 0.45);
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        height: 551px;
+    }
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.homepage-popup-wrapper {
-    width: 733px;
-    max-width: 95%;
-    background: #ffffff;
-    border-radius: 28px;
-    border: 3px solid transparent;
-    background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #0b4ec9, #45a6ff);
-    background-clip: padding-box, border-box;
-    box-shadow: 0 35px 80px rgba(0, 0, 0, .25);
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    height: 600px;
-}
-.homepage-popup-left h2 {
+    /* .homepage-popup-left h2 {
     font-size: 20px;
-}
+} */
 
-.homepage-popup-close{
-  position:absolute;
-  right:18px;
-  top:12px;
-  font-size:24px;
-  cursor:pointer;
-}
+    .homepage-popup-close {
+        position: absolute;
+        right: 18px;
+        top: 12px;
+        font-size: 24px;
+        cursor: pointer;
+        color: black;
+    }
 
 
-.homepage-popup-left{
+    /* .homepage-popup-left{
   width:50%;
   padding:40px;
   background:linear-gradient(180deg,#07387a,#0e4ea3);
   color:#fff;
-}
+} */
+    .homepage-popup-left {
+        width: 50%;
+        padding: 45px 40px;
+        background: linear-gradient(180deg, #06152b, #0b2a5a);
+        color: #ffffff;
+    }
 
+    .homepage-popup-left h2 {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
 
-.homepage-slide{display:none;}
-.homepage-slide.active{display:block;}
+    .homepage-popup-left p {
+        font-size: 15px;
+        opacity: 0.85;
+    }
 
-.homepage-test-box{
+    .homepage-slide {
+        display: none;
+    }
+
+    .homepage-slide.active {
+        display: block;
+    }
+
+    /* .homepage-test-box{
   background:#0a4fa8;
   padding:20px;
   border-radius:18px;
@@ -98,21 +117,33 @@
   gap:10px;
   align-items:center;
   margin-top:10px;
-}
+} */
 
-.homepage-test-user img{
-  width:45px;
-  height:45px;
-  border-radius:50%;
-}
+    .homepage-test-box {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 22px;
+        border-radius: 18px;
+        margin-top: 28px;
+    }
+
+    .homepage-test-box p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .homepage-test-user img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+    }
 
 
-.homepage-slider-dots{
-  text-align:center;
-  margin-top:15px;
-}
+    .homepage-slider-dots {
+        text-align: center;
+        margin-top: 15px;
+    }
 
-.homepage-slider-dots span{
+    /* .homepage-slider-dots span{
   width:10px;
   height:10px;
   border-radius:50%;
@@ -126,16 +157,31 @@
 .homepage-slider-dots span.active{
   background:#fff;
   opacity:1;
-}
+} */
+    .homepage-slider-dots span {
+        width: 8px;
+        height: 8px;
+        background: #6c8ecf;
+        opacity: 0.5;
+    }
 
+    .homepage-slider-dots span.active {
+        background: #ffffff;
+        opacity: 1;
+    }
 
-.homepage-popup-right{
+    /* .homepage-popup-right{
   width:50%;
   padding:35px 30px;
   background:#fff;
-}
+} */
+    .homepage-popup-right {
+        width: 50%;
+        padding: 45px 40px;
+        background: #575361;
+    }
 
-.homepage-popup-right input,
+    /* .homepage-popup-right input,
 .homepage-popup-right textarea{
   width:100%;
   border-radius:15px;
@@ -149,9 +195,27 @@
 .homepage-popup-right textarea{
   min-height:110px;
   resize:none;
-}
+} */
 
-.homepage-popup-btn{
+    .homepage-popup-right input,
+    .homepage-popup-right textarea {
+        width: 100%;
+        border-radius: 14px;
+        border: 1px solid #d5dbea;
+        padding: 14px 18px;
+        font-size: 15px;
+        margin-bottom: 16px;
+        transition: 0.25s;
+    }
+
+    .homepage-popup-right input:focus,
+    .homepage-popup-right textarea:focus {
+        /* outline:none; */
+        border-color: #0b2a5a;
+        box-shadow: 0 0 0 2px rgba(11, 42, 90, 0.15);
+    }
+
+    /* .homepage-popup-btn{
   background:linear-gradient(135deg,#1f75ff,#0057e7);
   color:#fff;
   font-size:18px;
@@ -159,112 +223,134 @@
   padding:14px 50px;
   border-radius:40px;
   cursor:pointer;
-}
+} */
 
-.homepage-popup-points{
+    .homepage-popup-btn {
+        background: linear-gradient(135deg, #0b2a5a, #123d8c);
+        color: #fff;
+        font-size: 17px;
+        border: none;
+        padding: 14px 60px;
+        border-radius: 40px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: 0.3s;
+    }
+
+    .homepage-popup-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(11, 42, 90, 0.35);
+    }
+
+    /* .homepage-popup-points{
   font-size:14px;
   color:#444;
   margin-top:10px;
-}
+} */
+    .homepage-popup-points {
+        font-size: 14px;
+        color: #2a2a2a;
+        margin: 12px 0 5px;
+    }
 
-@media(max-width:900px){
- .homepage-popup-wrapper{
-   flex-direction:column;
- }
- .homepage-popup-left,
- .homepage-popup-right{
-   width:100%;
- }
-}
+    @media(max-width:900px) {
+        .homepage-popup-wrapper {
+            flex-direction: column;
+        }
 
+        .homepage-popup-left,
+        .homepage-popup-right {
+            width: 100%;
+        }
+    }
 </style>
 
 
 
 
-<div class="homepage-popup-overlay" id="hpPopup">
+<div class="homepage-popup-overlay" id="hpPopup" style="display:none;">
 
-  <div class="homepage-popup-wrapper">
+    <div class="homepage-popup-wrapper">
 
-    <span class="homepage-popup-close" onclick="closePopup()">✕</span>
-    <div class="homepage-popup-left">
+        <span class="homepage-popup-close" onclick="closePopup()">✕</span>
+        <div class="homepage-popup-left">
 
-      <h2>Ready to Transform Your Ideas?</h2>
-      <p>Get a quick expert response in under 5 minutes.</p>
+            <h2>Ready to Transform Your Ideas?</h2>
+            <p>Get a quick expert response in under 5 minutes.</p>
 
-      <div id="homepage-slider">
+            <div id="homepage-slider">
 
-        <div class="homepage-slide active">
-          <div class="homepage-test-box">
-            <p>
-              Apptunix delivered two fully integrated applications for our business…
-            </p>
-            <div class="homepage-test-user">
-              <img src="https://i.pravatar.cc/100">
-              <div><b>Jocelyn Pettitt</b><br>CEO - HiVibe</div>
+                <div class="homepage-slide active">
+                    <div class="homepage-test-box">
+                        <p>
+                            Apptunix delivered two fully integrated applications for our business…
+                        </p>
+                        <div class="homepage-test-user">
+                            <img src="https://i.pravatar.cc/100">
+                            <div><b>Jocelyn Pettitt</b><br>CEO - HiVibe</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="homepage-slide">
+                    <div class="homepage-test-box">
+                        <p>Amazing engineering team. Highly reliable & responsive.</p>
+                        <div class="homepage-test-user">
+                            <img src="https://i.pravatar.cc/101">
+                            <div><b>Michael Ross</b><br>Founder - startupX</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="homepage-slide">
+                    <div class="homepage-test-box">
+                        <p>We scaled our product with their support & guidance.</p>
+                        <div class="homepage-test-user">
+                            <img src="https://i.pravatar.cc/102">
+                            <div><b>Anna Smith</b><br>COO - GrowthHub</div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-          </div>
+
+            <div class="homepage-slider-dots"></div>
+
         </div>
 
-        <div class="homepage-slide">
-          <div class="homepage-test-box">
-            <p>Amazing engineering team. Highly reliable & responsive.</p>
-            <div class="homepage-test-user">
-              <img src="https://i.pravatar.cc/101">
-              <div><b>Michael Ross</b><br>Founder - startupX</div>
-            </div>
-          </div>
+
+        <!-- RIGHT -->
+        <div class="homepage-popup-right">
+
+            <form>
+                <input type="text" placeholder="Name*">
+                <input type="text" placeholder="Contact Number*">
+                <input type="email" placeholder="Business Email*">
+                <textarea placeholder="Description *"></textarea>
+
+                <ul class="homepage-popup-points">
+                    <li>✔ NDA Protected</li>
+                    <li>✔ Trusted by 2000+ Entrepreneurs</li>
+                </ul>
+
+                <button class="homepage-popup-btn">Submit</button>
+            </form>
+
         </div>
-
-        <div class="homepage-slide">
-          <div class="homepage-test-box">
-            <p>We scaled our product with their support & guidance.</p>
-            <div class="homepage-test-user">
-              <img src="https://i.pravatar.cc/102">
-              <div><b>Anna Smith</b><br>COO - GrowthHub</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="homepage-slider-dots"></div>
 
     </div>
-
-
-    <!-- RIGHT -->
-    <div class="homepage-popup-right">
-
-      <form>
-        <input type="text" placeholder="Name*">
-        <input type="text" placeholder="Contact Number*">
-        <input type="email" placeholder="Business Email*">
-        <textarea placeholder="Description *"></textarea>
-
-        <ul class="homepage-popup-points">
-          <li>✔ NDA Protected</li>
-          <li>✔ Trusted by 2000+ Entrepreneurs</li>
-        </ul>
-
-        <button class="homepage-popup-btn">Submit</button>
-      </form>
-
-    </div>
-
-  </div>
 
 </div>
 
 
 <body class="template-color-1 spybody" data-spy="scroll" data-target=".navbar-example2" data-offset="70">
-         <header class="navbar">
+    <header class="navbar">
         <!-- LEFT -->
-        <div class="logo"><img src="./assets/images/infiniti-logo.png" alt=""></div>
+        <div class="logo header-logo"><img src="./assets/images/infiniti-logo.png" alt=""></div>
         <!-- CENTER -->
         <ul class="menu">
             <li><a href="#">Portfolio</a></li>
-              <li>
+            <li>
                 <a href="#">Services ▾</a>
                 <div class="mega-menu">
                     <div class="mega-wrap">
@@ -403,7 +489,7 @@
                 </div>
             </li>
 
-            
+
             <li><a href="#">About</a></li>
             <li><a href="#">Blog</a></li>
             <div class="nav-right">
@@ -412,9 +498,9 @@
             </div>
         </ul>
         <!-- RIGHT BUTTONS -->
-        </header>
+    </header>
 
-         <section class="hero page-hero">
+    <section class="hero page-hero">
         <video autoplay muted loop playsinline class="hero-video">
             <source src="./video/home_banner_video.mp4" type="video/mp4">
         </video>
@@ -431,15 +517,19 @@
                 <li>✔ 12+ Years of Innovation</li>
             </ul>
 
-            <div class="btn-wrap">
+            <!-- <div class="btn-wrap">
                 <a class="btn primary">Book an Enterprise Strategy Call</a>
                 <a class="btn secondary">Get My Project Estimate</a>
+            </div> -->
+            <div class="btn-wrap">
+                <a class="btn primary open-popup">Book an Enterprise Strategy Call</a>
+                <a class="btn secondary open-popup">Get My Project Estimate</a>
             </div>
 
         </div>
-        </section>
+    </section>
 
-        <section class="trusted">
+    <section class="trusted">
 
         <div class="trusted-wrap">
 
@@ -473,9 +563,9 @@
 
         </div>
 
-        </section>
+    </section>
 
-      <main class="main-page-wrapper">
+    <main class="main-page-wrapper">
         <section class="inf-hero">
             <div class="inf-hero-container">
                 <div class="inf-hero-grid">
@@ -545,134 +635,153 @@
         <!-- trusted client section start   end    -->
 
         <!-- Start Client Area -->
-       <section class="tab-section">
+        <section class="tab-section">
 
-  <!-- LEFT SIDE -->
-  <div class="tabs">
+            <!-- LEFT SIDE -->
+            <div class="tabs">
 
-    <div class="tab active" data-tab="microsoft">
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732221.png">
-      <span>Microsoft</span>
-      <span class="arrow">➜</span>
-    </div>
+                <div class="tab active" data-tab="microsoft">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732221.png">
+                    <span>Microsoft</span>
+                    <span class="arrow">➜</span>
+                </div>
 
-    <div class="tab" data-tab="database">
-      <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png">
-      <span>Database</span>
-      <span class="arrow">➜</span>
-    </div>
+                <div class="tab" data-tab="database">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png">
+                    <span>Database</span>
+                    <span class="arrow">➜</span>
+                </div>
 
-    <div class="tab" data-tab="bigdata">
-      <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png">
-      <span>Big Data</span>
-      <span class="arrow">➜</span>
-    </div>
+                <div class="tab" data-tab="bigdata">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png">
+                    <span>Big Data</span>
+                    <span class="arrow">➜</span>
+                </div>
 
-    <div class="tab" data-tab="frontend">
-      <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png">
-      <span>Frontend</span>
-      <span class="arrow">➜</span>
-    </div>
+                <div class="tab" data-tab="frontend">
+                    <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png">
+                    <span>Frontend</span>
+                    <span class="arrow">➜</span>
+                </div>
 
-    <div class="tab" data-tab="backend">
-      <img src="https://cdn-icons-png.flaticon.com/512/2721/2721295.png">
-      <span>Backend</span>
-      <span class="arrow">➜</span>
-    </div>
+                <div class="tab" data-tab="backend">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2721/2721295.png">
+                    <span>Backend</span>
+                    <span class="arrow">➜</span>
+                </div>
 
-    <div class="tab" data-tab="devops">
-      <img src="https://cdn-icons-png.flaticon.com/512/906/906324.png">
-      <span>DevOps</span>
-      <span class="arrow">➜</span>
-    </div>
+                <div class="tab" data-tab="devops">
+                    <img src="https://cdn-icons-png.flaticon.com/512/906/906324.png">
+                    <span>DevOps</span>
+                    <span class="arrow">➜</span>
+                </div>
 
-  </div>
+            </div>
 
-  <!-- RIGHT SIDE -->
-  <div class="tab-content">
+            <!-- RIGHT SIDE -->
+            <div class="tab-content">
 
-    <!-- MICROSOFT -->
-    <div class="content active" id="microsoft">
-      <div class="card">
-        <img src="https://1000logos.net/wp-content/uploads/2021/04/Salesforce-logo.png">
-        <p>Salesforce</p>
-      </div>
+                <!-- MICROSOFT -->
+                <div class="content active" id="microsoft">
+                    <div class="card">
+                        <img src="https://1000logos.net/wp-content/uploads/2021/04/Salesforce-logo.png">
+                        <p>Salesforce</p>
+                    </div>
 
-      <div class="card">
-        <img src="https://cdn.worldvectorlogo.com/logos/sharepoint-2.svg">
-        <p>SharePoint</p>
-      </div>
+                    <div class="card">
+                        <img src="https://cdn.worldvectorlogo.com/logos/sharepoint-2.svg">
+                        <p>SharePoint</p>
+                    </div>
 
-      <div class="card">
-        <img src="https://cdn.worldvectorlogo.com/logos/microsoft-dynamics-365.svg">
-        <p>Dynamics</p>
-      </div>
-    </div>
+                    <div class="card">
+                        <img src="https://cdn.worldvectorlogo.com/logos/microsoft-dynamics-365.svg">
+                        <p>Dynamics</p>
+                    </div>
+                </div>
 
-    <!-- DATABASE -->
-    <div class="content" id="database">
-      <div class="card">
-        <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png">
-        <p>MySQL</p>
-      </div>
+                <!-- DATABASE -->
+                <div class="content" id="database">
+                    <div class="card">
+                        <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png">
+                        <p>MySQL</p>
+                    </div>
 
-      <div class="card">
-        <img src="https://www.postgresql.org/media/img/about/press/elephant.png">
-        <p>PostgreSQL</p>
-      </div>
+                    <div class="card">
+                        <img src="https://www.postgresql.org/media/img/about/press/elephant.png">
+                        <p>PostgreSQL</p>
+                    </div>
 
-      <div class="card">
-        <img src="https://seeklogo.com/images/O/oracle-logo-2C2089A233-seeklogo.com.png">
-        <p>Oracle</p>
-      </div>
-    </div>
+                    <div class="card">
+                        <img src="https://seeklogo.com/images/O/oracle-logo-2C2089A233-seeklogo.com.png">
+                        <p>Oracle</p>
+                    </div>
+                </div>
 
-    <!-- BIG DATA -->
-    <div class="content" id="bigdata">
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Apache_Hive_logo.svg/2560px-Apache_Hive_logo.svg.png">
-        <p>Hive</p>
-      </div>
+                <!-- BIG DATA -->
+                <div class="content" id="bigdata">
+                    <div class="card">
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Apache_Hive_logo.svg/2560px-Apache_Hive_logo.svg.png">
+                        <p>Hive</p>
+                    </div>
 
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Apache_Cassandra_logo.svg">
-        <p>Cassandra</p>
-      </div>
+                    <div class="card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Apache_Cassandra_logo.svg">
+                        <p>Cassandra</p>
+                    </div>
 
-      <div class="card">
-        <img src="https://miro.medium.com/v2/resize:fit:600/1*U9wHsoUSFjkwmo7aXstq4Q.png">
-        <p>Apache NiFi</p>
-      </div>
-    </div>
+                    <div class="card">
+                        <img src="https://miro.medium.com/v2/resize:fit:600/1*U9wHsoUSFjkwmo7aXstq4Q.png">
+                        <p>Apache NiFi</p>
+                    </div>
+                </div>
 
-    <!-- FRONTEND -->
-    <div class="content" id="frontend">
-      <div class="card"><p>HTML</p></div>
-      <div class="card"><p>CSS</p></div>
-      <div class="card"><p>JavaScript</p></div>
-    </div>
+                <!-- FRONTEND -->
+                <div class="content" id="frontend">
+                    <div class="card">
+                        <p>HTML</p>
+                    </div>
+                    <div class="card">
+                        <p>CSS</p>
+                    </div>
+                    <div class="card">
+                        <p>JavaScript</p>
+                    </div>
+                </div>
 
-    <!-- BACKEND -->
-    <div class="content" id="backend">
-      <div class="card"><p>Node JS</p></div>
-      <div class="card"><p>Python</p></div>
-      <div class="card"><p>Java</p></div>
-    </div>
+                <!-- BACKEND -->
+                <div class="content" id="backend">
+                    <div class="card">
+                        <p>Node JS</p>
+                    </div>
+                    <div class="card">
+                        <p>Python</p>
+                    </div>
+                    <div class="card">
+                        <p>Java</p>
+                    </div>
+                </div>
 
-    <!-- DEVOPS -->
-    <div class="content" id="devops">
-      <div class="card"><p>AWS</p></div>
-      <div class="card"><p>Docker</p></div>
-      <div class="card"><p>Kubernetes</p></div>
-    </div>
+                <!-- DEVOPS -->
+                <div class="content" id="devops">
+                    <div class="card">
+                        <p>AWS</p>
+                    </div>
+                    <div class="card">
+                        <p>Docker</p>
+                    </div>
+                    <div class="card">
+                        <p>Kubernetes</p>
+                    </div>
+                </div>
 
-  </div>
+            </div>
 
-      </section>
+        </section>
         <!-- End client section -->
 
-         <!-- tech wrapper  -->
-         <div class="tech-wrapper">
+        <!-- tech wrapper  -->
+        <div class="tech-wrapper">
             <h2>Crafting Solutions with Technology<br /> that Works For You</h2>
             <div class="tech-slider">
 
@@ -714,175 +823,186 @@
 
             </div>
 
-         </div>
-         <!-- tech wrapper end  -->
+        </div>
+        <!-- tech wrapper end  -->
 
 
-         <!-- home below banner start two -->
-         <div class="home-below-banner-carousel-two">
+        <!-- home below banner start two -->
+        <div class="home-below-banner-carousel-two">
+            <section class="hero-banner-two">
+                <div class="hero-content-two">
+                    <h1>
+                        We’ve Built Some of the Most-Loved<br>
+                        Software and Mobile Apps in the World
+                    </h1>
 
-    <section class="hero-banner-two">
-    <div class="hero-content-two">
+                    <a href="#" class="hero-btn">
+                        Let’s Work Together
+                        <span>➜</span>
+                    </a>
 
-      <h1>
-        We’ve Built Some of the Most-Loved<br>
-        Software and Mobile Apps in the World
-      </h1>
+                </div>
+            </section>
 
-      <a href="#" class="hero-btn">
-        Let’s Work Together
-        <span>➜</span>
-      </a>
-
-    </div>
-  </section>
-
-         </div>
-         <!-- home below banner two end  -->
-
+        </div>
+        <!-- home below banner two end  -->
         <!-- Start Service Area -->
-        <div class="rn-service-area rn-section-pga section-separator" id="features">
+        <!-- <div class="rn-service-area rn-section-pga section-separator" id="features"> -->
+
+        <!-- End Service Area  -->
+
+        <style>
+            /* SECTION */
+            .navy-services {
+                background: linear-gradient(180deg, #05132b, #071c3e);
+                padding: 80px 0 60px;
+            }
+
+            /* HEADING */
+            .navy-services__heading h2 {
+                color: #fff;
+                font-size: 32px;
+                line-height: 1.25;
+                margin-bottom: 45px;
+            }
+
+            /* GRID */
+            .navy-services__grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 22px;
+            }
+
+            /* CARD */
+            .navy-service-card {
+                background: rgba(255, 255, 255, 0.06);
+                border-radius: 16px;
+                padding: 26px 22px;
+                border: 1px solid rgba(255, 255, 255, 0.08);
+
+                transition: 0.35s ease;
+                position: relative;
+                overflow: hidden;
+            }
+
+            /* ICON */
+            .navy-service-card i {
+                width: 22px;
+                height: 22px;
+                color: #ffffff;
+                margin-bottom: 16px;
+            }
+
+            /* TITLE */
+            .navy-service-card h5 {
+                font-size: 18px;
+                color: #ffffff;
+                margin-bottom: 10px;
+            }
+
+            /* TEXT */
+            .navy-service-card p {
+                font-size: 14px;
+                color: rgba(255, 255, 255, 0.75);
+                line-height: 1.5;
+            }
+
+            /* ARROW */
+            .navy-arrow {
+                display: inline-block;
+                margin-top: 16px;
+                font-size: 18px;
+                color: #ffffff;
+                transition: 0.3s;
+            }
+
+            /* HOVER */
+            .navy-service-card:hover {
+                transform: translateY(-6px);
+                background: rgba(255, 255, 255, 0.1);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+            }
+
+            .navy-service-card:hover .navy-arrow {
+                transform: translateX(6px);
+            }
+
+            /* RESPONSIVE */
+            @media(max-width: 991px) {
+                .navy-services__grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media(max-width: 576px) {
+                .navy-services__grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+        <section class="navy-services" id="features">
             <div class="container">
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title text-left" data-aos="fade-up" data-aos-duration="500"
-                            data-aos-delay="100" data-aos-once="true">
-                            <!-- <span class="subtitle">Features</span> -->
-                            <h2 class="title">Empower Your Journey In the Digital World<br /> with Services You Can
-                                Trust</h2>
-                        </div>
-                    </div>
+                <div class="navy-services__heading">
+                    <h2>
+                        Empower Your Journey In the Digital World<br>
+                        with Services You Can Trust
+                    </h2>
                 </div>
-                <div class="row row--25 mt_md--10 mt_sm--10">
 
-                    <!-- Start Single Service -->
-                    <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="100" data-aos-once="true"
-                        class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-service">
-                            <div class="inner">
-                                <div class="icon">
-                                    <i data-feather="menu"></i>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Business Stratagy</a></h4>
-                                    <p class="description">I throw myself down among the tall grass by the stream as I
-                                        lie close to the earth.</p>
-                                    <a class="read-more-button" href="#"><i data-feather="arrow-right"></i></a>
-                                </div>
-                            </div>
-                            <a class="over-link" href="#"></a>
-                        </div>
-                    </div>
-                    <!-- End SIngle Service -->
-                    <!-- Start Single Service -->
-                    <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="300" data-aos-once="true"
-                        class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-service">
-                            <div class="inner">
-                                <div class="icon">
-                                    <i data-feather="book-open"></i>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">App Development</a></h4>
-                                    <p class="description"> It uses a dictionary of over 200 Latin words, combined with
-                                        a handful of model sentence.</p>
-                                    <a class="read-more-button" href="#"><i data-feather="arrow-right"></i></a>
-                                </div>
-                            </div>
-                            <a class="over-link" href="#"></a>
-                        </div>
-                    </div>
-                    <!-- End SIngle Service -->
-                    <!-- Start Single Service -->
-                    <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" data-aos-once="true"
-                        class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-service">
-                            <div class="inner">
-                                <div class="icon">
-                                    <i data-feather="tv"></i>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">App Development</a></h4>
-                                    <p class="description">I throw myself down among the tall grass by the stream as I
-                                        lie close to the earth.</p>
-                                    <a class="read-more-button" href="#"><i data-feather="arrow-right"></i></a>
-                                </div>
-                            </div>
-                            <a class="over-link" href="#"></a>
-                        </div>
-                    </div>
-                    <!-- End SIngle Service -->
-                    <!-- Start Single Service -->
-                    <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="100" data-aos-once="true"
-                        class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-service">
-                            <div class="inner">
-                                <div class="icon">
-                                    <i data-feather="twitch"></i>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Mobile App</a></h4>
-                                    <p class="description">There are many variations of passages of Lorem Ipsum
-                                        available, but the majority.
-                                    </p>
-                                    <a class="read-more-button" href="#"><i data-feather="arrow-right"></i></a>
-                                </div>
-                            </div>
-                            <a class="over-link" href="#"></a>
-                        </div>
-                    </div>
-                    <!-- End SIngle Service -->
+                <div class="navy-services__grid">
 
-                    <!-- Start Single Service -->
-                    <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="300" data-aos-once="true"
-                        class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-service">
-                            <div class="inner">
-                                <div class="icon">
-                                    <i data-feather="wifi"></i>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">CEO Marketing</a></h4>
-                                    <p class="description">always free from repetition,
-                                        injected humour, or non-characteristic words etc.</p>
-                                    <a class="read-more-button" href="#"><i data-feather="arrow-right"></i></a>
-                                </div>
-                            </div>
-                            <a class="over-link" href="#"></a>
-                        </div>
+                    <!-- Card -->
+                    <div class="navy-service-card">
+                        <i data-feather="menu"></i>
+                        <h5>Business Strategy</h5>
+                        <p>I throw myself down among the tall grass by the stream.</p>
+                        <span class="navy-arrow">→</span>
                     </div>
-                    <!-- End SIngle Service -->
-                    <!-- Start Single Service -->
-                    <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" data-aos-once="true"
-                        class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-service">
-                            <div class="inner">
-                                <div class="icon">
-                                    <i data-feather="slack"></i>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Personal Portfolio April</a></h4>
-                                    <p class="description"> It uses a dictionary of over 200 Latin words, combined with
-                                        a handful of model sentence.</p>
-                                    <a class="read-more-button" href="#"><i data-feather="arrow-right"></i></a>
-                                </div>
-                            </div>
-                            <a class="over-link" href="#"></a>
-                        </div>
+
+                    <div class="navy-service-card">
+                        <i data-feather="book-open"></i>
+                        <h5>App Development</h5>
+                        <p>It uses a dictionary of over 200 Latin words.</p>
+                        <span class="navy-arrow">→</span>
                     </div>
-                    <!-- End SIngle Service -->
+
+                    <div class="navy-service-card">
+                        <i data-feather="tv"></i>
+                        <h5>App Development</h5>
+                        <p>I throw myself down among the tall grass.</p>
+                        <span class="navy-arrow">→</span>
+                    </div>
+
+                    <div class="navy-service-card">
+                        <i data-feather="twitch"></i>
+                        <h5>Mobile App</h5>
+                        <p>There are many variations of passages available.</p>
+                        <span class="navy-arrow">→</span>
+                    </div>
+
+                    <div class="navy-service-card">
+                        <i data-feather="wifi"></i>
+                        <h5>CEO Marketing</h5>
+                        <p>Always free from repetition and injected humour.</p>
+                        <span class="navy-arrow">→</span>
+                    </div>
+
+                    <div class="navy-service-card">
+                        <i data-feather="slack"></i>
+                        <h5>Personal Portfolio</h5>
+                        <p>Combined with a handful of model sentences.</p>
+                        <span class="navy-arrow">→</span>
+                    </div>
 
                 </div>
             </div>
-        </div>
-        <!-- End Service Area  -->
+        </section>
 
 
-        
-<!-- ================= SLIDER START ================= -->
+        <!-- ================= SLIDER START ================= -->
 
-<section class="homepage-testimonial-slider">
+        <!-- <section class="homepage-testimonial-slider">
 
   <div class="homepage-testimonial-topbar">
 
@@ -901,7 +1021,6 @@
   <div class="homepage-testimonial-swiper myVideoSlider">
     <div class="swiper-wrapper">
 
-  <!-- CARD 1 -->
   <div class="swiper-slide homepage-testimonial-card" data-video="./video/home_banner_video.mp4">
     <img src="./assets/images/airlane.jpg">
     <div class="homepage-testimonial-play-btn">▶</div>
@@ -909,7 +1028,6 @@
     <p>Co Founder – Luxbubble</p>
   </div>
 
-  <!-- CARD 2 -->
   <div class="swiper-slide homepage-testimonial-card" data-video="./video/home_banner_video.mp4">
     <img src="./assets/images/airlane.jpg">
     <div class="homepage-testimonial-play-btn">▶</div>
@@ -917,7 +1035,6 @@
     <p>Co Founder – Bancreach</p>
   </div>
 
-  <!-- CARD 3 -->
   <div class="swiper-slide homepage-testimonial-card" data-video="./video/home_banner_video.mp4">
     <img src="./assets/images/airlane.jpg">
     <div class="homepage-testimonial-play-btn">▶</div>
@@ -925,15 +1042,12 @@
     <p>CEO – Logibids</p>
   </div>
 
-  <!-- CARD 4 -->
   <div class="swiper-slide homepage-testimonial-card" data-video="./video/home_banner_video.mp4">
     <img src="./assets/images/airlane.jpg">
     <div class="homepage-testimonial-play-btn">▶</div>
     <h3>Sarah Kim</h3>
     <p>Founder – BrandPro</p>
   </div>
-
-  <!-- CARD 5 -->
   <div class="swiper-slide homepage-testimonial-card" data-video="./video/home_banner_video.mp4">
     <img src="./assets/images/airlane.jpg">
     <div class="homepage-testimonial-play-btn">▶</div>
@@ -941,7 +1055,6 @@
     <p>CTO – FinTech Hub</p>
   </div>
 
-  <!-- CARD 6 -->
   <div class="swiper-slide homepage-testimonial-card" data-video="./video/home_banner_video.mp4">
     <img src="./assets/images/airlane.jpg">
     <div class="homepage-testimonial-play-btn">▶</div>
@@ -953,25 +1066,23 @@
 
   </div>
 
-</section>
+</section> -->
 
-<!-- ================= SLIDER END ================= -->
+        <!-- ================= SLIDER END ================= -->
 
+        <!-- ================= POPUP ================= -->
 
-
-<!-- ================= POPUP ================= -->
-
-<div class="homepage-testimonial-popup">
-  <div class="homepage-testimonial-popup-content">
-    <span class="homepage-testimonial-close">✖</span>
-    <video id="homepage-testimonial-video" controls></video>
-  </div>
-</div>
+        <div class="homepage-testimonial-popup">
+            <div class="homepage-testimonial-popup-content">
+                <span class="homepage-testimonial-close">✖</span>
+                <video id="homepage-testimonial-video" controls></video>
+            </div>
+        </div>
 
 
 
         <!-- wall-of-fame -->
-        <section class="wall-of-fame">
+        <section class="wall-of-fame ">
             <div class="container">
 
                 <h2>Our Wall of Fame as a Mobile App<br>Development Company</h2>
@@ -1027,23 +1138,23 @@
 
 
         <!-- home-below-banner-carousel-one -->
-         <div class="home-below-banner-carousel-one">
+        <div class="home-below-banner-carousel-one">
 
-  <section class="hero-banner-one">
-    <div class="hero-content-one">
+            <section class="hero-banner-one">
+                <div class="hero-content-one">
 
-      <h1>
-        We’ve Built Some of the Most-Loved<br>
-        Software and Mobile Apps in the World
-      </h1>
+                    <h1>
+                        We’ve Built Some of the Most-Loved<br>
+                        Software and Mobile Apps in the World
+                    </h1>
 
-      <a href="#" class="hero-btn">
-        Let’s Work Together
-        <span>➜</span>
-      </a>
+                    <a href="#" class="hero-btn">
+                        Let’s Work Together
+                        <span>➜</span>
+                    </a>
 
-    </div>
-  </section>
+                </div>
+            </section>
 
         </div>
         <!-- home-below-banner-carousel-one -->
@@ -1247,134 +1358,153 @@
 
 
         <!-- Start Client Area -->
-       <section class="tab-section">
+        <section class="tab-section">
 
-  <!-- LEFT SIDE -->
-  <div class="tabs">
+            <!-- LEFT SIDE -->
+            <div class="tabs">
 
-    <div class="tab active" data-tab="microsoft">
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732221.png">
-      <span>Microsoft</span>
-      <span class="arrow">➜</span>
-    </div>
+                <div class="tab active" data-tab="microsoft">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732221.png">
+                    <span>Microsoft</span>
+                    <span class="arrow">➜</span>
+                </div>
 
-    <div class="tab" data-tab="database">
-      <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png">
-      <span>Database</span>
-      <span class="arrow">➜</span>
-    </div>
+                <div class="tab" data-tab="database">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png">
+                    <span>Database</span>
+                    <span class="arrow">➜</span>
+                </div>
 
-    <div class="tab" data-tab="bigdata">
-      <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png">
-      <span>Big Data</span>
-      <span class="arrow">➜</span>
-    </div>
+                <div class="tab" data-tab="bigdata">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png">
+                    <span>Big Data</span>
+                    <span class="arrow">➜</span>
+                </div>
 
-    <div class="tab" data-tab="frontend">
-      <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png">
-      <span>Frontend</span>
-      <span class="arrow">➜</span>
-    </div>
+                <div class="tab" data-tab="frontend">
+                    <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png">
+                    <span>Frontend</span>
+                    <span class="arrow">➜</span>
+                </div>
 
-    <div class="tab" data-tab="backend">
-      <img src="https://cdn-icons-png.flaticon.com/512/2721/2721295.png">
-      <span>Backend</span>
-      <span class="arrow">➜</span>
-    </div>
+                <div class="tab" data-tab="backend">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2721/2721295.png">
+                    <span>Backend</span>
+                    <span class="arrow">➜</span>
+                </div>
 
-    <div class="tab" data-tab="devops">
-      <img src="https://cdn-icons-png.flaticon.com/512/906/906324.png">
-      <span>DevOps</span>
-      <span class="arrow">➜</span>
-    </div>
+                <div class="tab" data-tab="devops">
+                    <img src="https://cdn-icons-png.flaticon.com/512/906/906324.png">
+                    <span>DevOps</span>
+                    <span class="arrow">➜</span>
+                </div>
 
-  </div>
+            </div>
 
-  <!-- RIGHT SIDE -->
-  <div class="tab-content">
+            <!-- RIGHT SIDE -->
+            <div class="tab-content">
 
-    <!-- MICROSOFT -->
-    <div class="content active" id="microsoft">
-      <div class="card">
-        <img src="../officewebsite/assets/images/icons/tech_logo17.png">
-        <p>Salesforce</p>
-      </div>
+                <!-- MICROSOFT -->
+                <div class="content active" id="microsoft">
+                    <div class="card">
+                        <img src="../officewebsite/assets/images/icons/tech_logo17.png">
+                        <p>Salesforce</p>
+                    </div>
 
-      <div class="card">
-        <img src="../officewebsite/assets/images/icons/tech_logo17.png">
-        <p>SharePoint</p>
-      </div>
+                    <div class="card">
+                        <img src="../officewebsite/assets/images/icons/tech_logo17.png">
+                        <p>SharePoint</p>
+                    </div>
 
-      <div class="card">
-        <img src="assets/images/icons/tech_logo53.png">
-        <p>Dynamics</p>
-      </div>
-      <div class="card">
-        <img src="./assets/images/icons/tech_logo17.png">
-        <p>Dynamics</p>
-      </div>
-    </div>
+                    <div class="card">
+                        <img src="assets/images/icons/tech_logo53.png">
+                        <p>Dynamics</p>
+                    </div>
+                    <div class="card">
+                        <img src="./assets/images/icons/tech_logo17.png">
+                        <p>Dynamics</p>
+                    </div>
+                </div>
 
-    <!-- DATABASE -->
-    <div class="content" id="database">
-      <div class="card">
-        <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png">
-        <p>MySQL</p>
-      </div>
+                <!-- DATABASE -->
+                <div class="content" id="database">
+                    <div class="card">
+                        <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png">
+                        <p>MySQL</p>
+                    </div>
 
-      <div class="card">
-        <img src="https://www.postgresql.org/media/img/about/press/elephant.png">
-        <p>PostgreSQL</p>
-      </div>
+                    <div class="card">
+                        <img src="https://www.postgresql.org/media/img/about/press/elephant.png">
+                        <p>PostgreSQL</p>
+                    </div>
 
-      <div class="card">
-        <img src="https://seeklogo.com/images/O/oracle-logo-2C2089A233-seeklogo.com.png">
-        <p>Oracle</p>
-      </div>
-    </div>
+                    <div class="card">
+                        <img src="https://seeklogo.com/images/O/oracle-logo-2C2089A233-seeklogo.com.png">
+                        <p>Oracle</p>
+                    </div>
+                </div>
 
-    <!-- BIG DATA -->
-    <div class="content" id="bigdata">
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Apache_Hive_logo.svg/2560px-Apache_Hive_logo.svg.png">
-        <p>Hive</p>
-      </div>
+                <!-- BIG DATA -->
+                <div class="content" id="bigdata">
+                    <div class="card">
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Apache_Hive_logo.svg/2560px-Apache_Hive_logo.svg.png">
+                        <p>Hive</p>
+                    </div>
 
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Apache_Cassandra_logo.svg">
-        <p>Cassandra</p>
-      </div>
+                    <div class="card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Apache_Cassandra_logo.svg">
+                        <p>Cassandra</p>
+                    </div>
 
-      <div class="card">
-        <img src="https://miro.medium.com/v2/resize:fit:600/1*U9wHsoUSFjkwmo7aXstq4Q.png">
-        <p>Apache NiFi</p>
-      </div>
-    </div>
+                    <div class="card">
+                        <img src="https://miro.medium.com/v2/resize:fit:600/1*U9wHsoUSFjkwmo7aXstq4Q.png">
+                        <p>Apache NiFi</p>
+                    </div>
+                </div>
 
-    <!-- FRONTEND -->
-    <div class="content" id="frontend">
-      <div class="card"><p>HTML</p></div>
-      <div class="card"><p>CSS</p></div>
-      <div class="card"><p>JavaScript</p></div>
-    </div>
+                <!-- FRONTEND -->
+                <div class="content" id="frontend">
+                    <div class="card">
+                        <p>HTML</p>
+                    </div>
+                    <div class="card">
+                        <p>CSS</p>
+                    </div>
+                    <div class="card">
+                        <p>JavaScript</p>
+                    </div>
+                </div>
 
-    <!-- BACKEND -->
-    <div class="content" id="backend">
-      <div class="card"><p>Node JS</p></div>
-      <div class="card"><p>Python</p></div>
-      <div class="card"><p>Java</p></div>
-    </div>
+                <!-- BACKEND -->
+                <div class="content" id="backend">
+                    <div class="card">
+                        <p>Node JS</p>
+                    </div>
+                    <div class="card">
+                        <p>Python</p>
+                    </div>
+                    <div class="card">
+                        <p>Java</p>
+                    </div>
+                </div>
 
-    <!-- DEVOPS -->
-    <div class="content" id="devops">
-      <div class="card"><p>AWS</p></div>
-      <div class="card"><p>Docker</p></div>
-      <div class="card"><p>Kubernetes</p></div>
-    </div>
+                <!-- DEVOPS -->
+                <div class="content" id="devops">
+                    <div class="card">
+                        <p>AWS</p>
+                    </div>
+                    <div class="card">
+                        <p>Docker</p>
+                    </div>
+                    <div class="card">
+                        <p>Kubernetes</p>
+                    </div>
+                </div>
 
-  </div>
+            </div>
 
-</section>
+        </section>
         <!-- End client section -->
 
 
@@ -1537,71 +1667,71 @@
 
 
         <!-- faq section start  -->
-         <div class="faq-top-section">
-         <h2>Turning Your Questions into Confidence</h2>
-        <div class="faq">
+        <div class="faq-top-section">
+            <h2>Turning Your Questions into Confidence</h2>
+            <div class="faq">
 
-            <label class="faq-item">
-                <input type="radio" name="faq" checked>
-                <div class="question">How do you ensure the security of the app?</div>
-                <div class="answer">We follow secure coding standards & audits.</div>
-            </label>
+                <label class="faq-item">
+                    <input type="radio" name="faq" checked>
+                    <div class="question">How do you ensure the security of the app?</div>
+                    <div class="answer">We follow secure coding standards & audits.</div>
+                </label>
 
-            <label class="faq-item">
-                <input type="radio" name="faq">
-                <div class="question">How do you handle project management?</div>
-                <div class="answer">We use agile methodology & tools.</div>
-            </label>
+                <label class="faq-item">
+                    <input type="radio" name="faq">
+                    <div class="question">How do you handle project management?</div>
+                    <div class="answer">We use agile methodology & tools.</div>
+                </label>
 
-            <label class="faq-item">
-                <input type="radio" name="faq">
-                <div class="question">How do you ensure a seamless user experience?</div>
-                <div class="answer">We follow UI/UX design principles.</div>
-            </label>
+                <label class="faq-item">
+                    <input type="radio" name="faq">
+                    <div class="question">How do you ensure a seamless user experience?</div>
+                    <div class="answer">We follow UI/UX design principles.</div>
+                </label>
 
-            <label class="faq-item">
-                <input type="radio" name="faq">
-                <div class="question">What mobile app services do you offer?</div>
-                <div class="answer">We develop Android, iOS & hybrid apps.</div>
-            </label>
+                <label class="faq-item">
+                    <input type="radio" name="faq">
+                    <div class="question">What mobile app services do you offer?</div>
+                    <div class="answer">We develop Android, iOS & hybrid apps.</div>
+                </label>
 
-            <label class="faq-item">
-                <input type="radio" name="faq">
-                <div class="question">What makes your company different?</div>
-                <div class="answer">Strong experience & reliable support.</div>
-            </label>
+                <label class="faq-item">
+                    <input type="radio" name="faq">
+                    <div class="question">What makes your company different?</div>
+                    <div class="answer">Strong experience & reliable support.</div>
+                </label>
 
-            <label class="faq-item">
-                <input type="radio" name="faq">
-                <div class="question">What is the average cost?</div>
-                <div class="answer">Cost depends on features & complexity.</div>
-            </label>
+                <label class="faq-item">
+                    <input type="radio" name="faq">
+                    <div class="question">What is the average cost?</div>
+                    <div class="answer">Cost depends on features & complexity.</div>
+                </label>
 
-            <label class="faq-item">
-                <input type="radio" name="faq">
-                <div class="question">Do you provide maintenance?</div>
-                <div class="answer">Yes, we provide long-term support.</div>
-            </label>
+                <label class="faq-item">
+                    <input type="radio" name="faq">
+                    <div class="question">Do you provide maintenance?</div>
+                    <div class="answer">Yes, we provide long-term support.</div>
+                </label>
 
-            <label class="faq-item">
-                <input type="radio" name="faq">
-                <div class="question">How long does it take to build an app?</div>
-                <div class="answer">Typically 2-6 months depending on scope.</div>
-            </label>
+                <label class="faq-item">
+                    <input type="radio" name="faq">
+                    <div class="question">How long does it take to build an app?</div>
+                    <div class="answer">Typically 2-6 months depending on scope.</div>
+                </label>
 
-            <label class="faq-item">
-                <input type="radio" name="faq">
-                <div class="question">Do you sign NDA?</div>
-                <div class="answer">Yes, we ensure full confidentiality.</div>
-            </label>
+                <label class="faq-item">
+                    <input type="radio" name="faq">
+                    <div class="question">Do you sign NDA?</div>
+                    <div class="answer">Yes, we ensure full confidentiality.</div>
+                </label>
 
-            <label class="faq-item">
-                <input type="radio" name="faq">
-                <div class="question">Do you help with publishing apps?</div>
-                <div class="answer">Yes, we assist with App Store & Play Store.</div>
-            </label>
+                <label class="faq-item">
+                    <input type="radio" name="faq">
+                    <div class="question">Do you help with publishing apps?</div>
+                    <div class="answer">Yes, we assist with App Store & Play Store.</div>
+                </label>
 
-        </div>
+            </div>
         </div>
         <!-- faq section end  -->
 
@@ -1676,6 +1806,269 @@
                 </div>
 
             </div>
+        </section>
+
+        <style>
+           .navy-testimonial-slider{
+                padding: 100px 20px;
+                background: linear-gradient(180deg,#05142e,#071c3e);
+                }
+
+                /* Header */
+                .navy-testimonial-header{
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                margin-bottom:40px;
+                }
+
+                .navy-testimonial-header h2{
+                color:#fff;
+                font-size:32px;
+                }
+
+                /* Controls */
+                .navy-slider-controls button{
+                width:42px;
+                height:42px;
+                border-radius:50%;
+                border:1px solid rgba(255,255,255,.2);
+                background:rgba(255,255,255,.08);
+                color:#fff;
+                font-size:22px;
+                cursor:pointer;
+                transition:.3s;
+                }
+
+                .navy-slider-controls button:hover{
+                background:#fff;
+                color:#05142e;
+                }
+
+                /* Slider */
+                .navy-slider-viewport{
+                overflow:visible;
+                }
+
+                .navy-slider-track{
+                display:flex;
+                gap:24px;
+                transition:transform .5s ease;
+                }
+
+                /* Card */
+                .navy-testimonial-card{
+                min-width: calc(33.333% - 16px);
+                background:rgba(255,255,255,.06);
+                border:1px solid rgba(255,255,255,.08);
+                border-radius:18px;
+                padding:16px;
+                text-align:center;
+                position:relative;
+                transition:.3s;
+                cursor: pointer;
+                }
+
+                .navy-testimonial-card:hover{
+                transform:translateY(-6px);
+                background:rgba(255,255,255,.1);
+                }
+
+                .navy-testimonial-card img{
+                width:100%;
+                height:200px;
+                object-fit:cover;
+                border-radius:14px;
+                }
+
+                .navy-testimonial-card .play{
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                width:54px;
+                height:54px;
+                background:rgba(0,0,0,.55);
+                color:#fff;
+                border-radius:50%;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                pointer-events: none;
+                }
+
+                .navy-testimonial-card h3{
+                margin-top:14px;
+                color:#fff;
+                font-size:17px;
+                }
+
+                .navy-testimonial-card p{
+                font-size:13px;
+                color:rgba(255,255,255,.7);
+                }
+
+                /* Responsive */
+                @media(max-width:900px){
+                .navy-testimonial-card{
+                    min-width: calc(50% - 12px);
+                    cursor: pointer;
+                }
+                }
+
+                @media(max-width:600px){
+                .navy-testimonial-card{
+                    min-width:100%;
+                    cursor: pointer;
+                }
+                }
+.navy-video-modal{
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.navy-video-modal__overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
+}
+
+.navy-video-modal__content{
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  background: #000;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 40px 90px rgba(0,0,0,0.45);
+  z-index: 2;
+}
+
+.navy-video-modal video{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.navy-video-modal__close{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s;
+}
+
+.navy-video-modal__close:hover{
+  background: #ffffff;
+  color: #000;
+}
+
+        </style>
+        <section class="navy-testimonial-slider">
+
+        <div class="navy-testimonial-header">
+            <h2>Client Testimonials</h2>
+
+            <div class="navy-slider-controls">
+            <button id="navyPrev">‹</button>
+            <button id="navyNext">›</button>
+            </div>
+        </div>
+
+        <div class="navy-slider-viewport">
+            <div class="navy-slider-track">
+
+            <!-- CARD -->
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>David Ams</h3>
+                <p>Co Founder – Luxbubble</p>
+            </div>
+
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>Marco Perez</h3>
+                <p>Co Founder – Bancreach</p>
+            </div>
+
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>Mishari</h3>
+                <p>CEO – Logibids</p>
+            </div>
+
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>Sarah Kim</h3>
+                <p>Founder – BrandPro</p>
+            </div>
+
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>John Carter</h3>
+                <p>CTO – FinTech Hub</p>
+            </div>
+
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>Maria Lopez</h3>
+                <p>Director – Bright Labs</p>
+            </div>
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>Maria Lopez</h3>
+                <p>Director – Bright Labs</p>
+            </div>
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>Maria Lopez</h3>
+                <p>Director – Bright Labs</p>
+            </div>
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>Maria Lopez</h3>
+                <p>Director – Bright Labs</p>
+            </div>
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>Maria Lopez</h3>
+                <p>Director – Bright Labs</p>
+            </div>
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>Maria Lopez</h3>
+                <p>Director – Bright Labs</p>
+            </div>
+
+            </div>
+        </div>
+
         </section>
 
 
@@ -2928,9 +3321,17 @@
         <!-- End Modal Area  -->
 
 
-        
 
 
+
+        <div class="navy-video-modal" id="navyVideoModal">
+            <div class="navy-video-modal__overlay"></div>
+
+            <div class="navy-video-modal__content">
+                <button class="navy-video-modal__close" aria-label="Close">✕</button>
+                <video id="navyModalVideo" controls autoplay></video>
+            </div>
+        </div>
 
     </main>
 
@@ -2950,7 +3351,119 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+        const track = document.querySelector(".navy-slider-track");
+        const cards = document.querySelectorAll(".navy-testimonial-card");
+        const nextBtn = document.getElementById("navyNext");
+        const prevBtn = document.getElementById("navyPrev");
+
+        if (!track || !cards.length || !nextBtn || !prevBtn) {
+            console.warn("Slider elements missing");
+            return;
+        }
+
+        let index = 0;
+        let visible = 3;
+        const gap = 24;
+
+        function updateVisible() {
+            if (window.innerWidth < 600) visible = 1;
+            else if (window.innerWidth < 900) visible = 2;
+            else visible = 3;
+        }
+
+        function slide() {
+            const cardWidth = cards[0].offsetWidth + gap;
+            track.style.transform = `translateX(-${index * cardWidth}px)`;
+        }
+
+        nextBtn.addEventListener("click", () => {
+            updateVisible();
+            if (index < cards.length - visible) {
+            index++;
+            slide();
+            }
+        });
+
+        prevBtn.addEventListener("click", () => {
+            if (index > 0) {
+            index--;
+            slide();
+            }
+        });
+
+        window.addEventListener("resize", () => {
+            index = 0;
+            updateVisible();
+            slide();
+        });
+
+        });
+        </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const modal = document.getElementById("navyVideoModal");
+  const modalVideo = document.getElementById("navyModalVideo");
+  const overlay = document.querySelector(".navy-video-modal__overlay");
+  const cards = document.querySelectorAll(".navy-testimonial-card");
+
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      const videoSrc = card.getAttribute("data-video");
+      if (!videoSrc) return;
+
+      modalVideo.src = videoSrc;
+      modal.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  overlay.addEventListener("click", closeModal);
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") closeModal();
+  });
+
+  function closeModal(){
+    modal.style.display = "none";
+    modalVideo.pause();
+    modalVideo.src = "";
+    document.body.style.overflow = "auto";
+  }
+  
+const closeBtn = document.querySelector(".navy-video-modal__close");
+
+closeBtn.addEventListener("click", closeModal);
+
+});
+</script>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const popup = document.getElementById("hpPopup");
+        const openButtons = document.querySelectorAll(".open-popup");
+
+        // Open popup on both buttons
+        openButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                popup.style.display = "flex";
+                document.body.style.overflow = "hidden";
+            });
+        });
+
+        // Close popup on outside click
+        popup.addEventListener("click", (e) => {
+            if (e.target === popup) {
+                popup.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        });});
+    </script>
 
     <script>
         function openPopup() {
@@ -2961,139 +3474,130 @@
             document.getElementById("popupOverlay").style.display = "none";
         }
     </script>
+    <script>
+        /* =========================
+              POPUP SLIDER SCRIPT
+           ========================= */
 
-<script>
-window.addEventListener("load",()=>{
- setTimeout(()=>{
-  document.getElementById("hpPopup").style.display="flex";
-  document.body.style.overflow="hidden";
- },1500);
-});
+        const popupSlides = document.querySelectorAll(".homepage-slide");
+        const popupDotBox = document.querySelector(".homepage-slider-dots");
+        let popupIndex = 0;
 
+        popupSlides.forEach((s, idx) => {
+            let dot = document.createElement("span");
+            if (idx === 0) dot.classList.add("active");
+            dot.onclick = () => popupShowSlide(idx);
+            popupDotBox.appendChild(dot);
+        });
 
-/* =========================
-      POPUP SLIDER SCRIPT
-   ========================= */
+        const popupDots = document.querySelectorAll(".homepage-slider-dots span");
 
-const popupSlides = document.querySelectorAll(".homepage-slide");
-const popupDotBox = document.querySelector(".homepage-slider-dots");
-let popupIndex = 0;
+        function popupShowSlide(n) {
+            popupSlides.forEach(s => s.classList.remove("active"));
+            popupDots.forEach(d => d.classList.remove("active"));
 
-popupSlides.forEach((s,idx)=>{
- let dot=document.createElement("span");
- if(idx===0) dot.classList.add("active");
- dot.onclick=()=>popupShowSlide(idx);
- popupDotBox.appendChild(dot);
-});
+            popupSlides[n].classList.add("active");
+            popupDots[n].classList.add("active");
 
-const popupDots=document.querySelectorAll(".homepage-slider-dots span");
+            popupIndex = n;
+        }
 
-function popupShowSlide(n){
- popupSlides.forEach(s=>s.classList.remove("active"));
- popupDots.forEach(d=>d.classList.remove("active"));
-
- popupSlides[n].classList.add("active");
- popupDots[n].classList.add("active");
-
- popupIndex=n;
-}
-
-setInterval(()=>{
- popupIndex=(popupIndex+1)%popupSlides.length;
- popupShowSlide(popupIndex);
-},4000);
+        setInterval(() => {
+            popupIndex = (popupIndex + 1) % popupSlides.length;
+            popupShowSlide(popupIndex);
+        }, 4000);
 
 
-function closePopup(){
- document.getElementById("hpPopup").style.display="none";
- document.body.style.overflow="auto";
-}
-</script>
+        function closePopup() {
+            document.getElementById("hpPopup").style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    </script>
 
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
 
-  /* ========== SWIPER SLIDER ========== */
-  var swiper = new Swiper(".myVideoSlider", {
-    slidesPerView: 3,
-    spaceBetween: 25,
-    slidesPerGroup: 3,
-    loop: false,
+            /* ========== SWIPER SLIDER ========== */
+            var swiper = new Swiper(".myVideoSlider", {
+                slidesPerView: 3,
+                spaceBetween: 25,
+                slidesPerGroup: 3,
+                loop: false,
 
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
-    },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev"
+                },
 
-    breakpoints: {
-      0:   { slidesPerView: 1, slidesPerGroup: 1 },
-      768: { slidesPerView: 2, slidesPerGroup: 2 },
-      1200:{ slidesPerView: 3, slidesPerGroup: 3 }
-    }
-  });
+                breakpoints: {
+                    0: { slidesPerView: 1, slidesPerGroup: 1 },
+                    768: { slidesPerView: 2, slidesPerGroup: 2 },
+                    1200: { slidesPerView: 3, slidesPerGroup: 3 }
+                }
+            });
 
 
 
-  /* ========== TESTIMONIAL POPUP ========== */
+            /* ========== TESTIMONIAL POPUP ========== */
 
-  const testimonialCards  = document.querySelectorAll(".homepage-testimonial-card");
-  const testimonialPopup  = document.querySelector(".homepage-testimonial-popup");
-  const testimonialVideo  = document.getElementById("homepage-testimonial-video");
-  const testimonialClose  = document.querySelector(".homepage-testimonial-close");
-
-
-  /* OPEN */
-  testimonialCards.forEach(card => {
-    card.addEventListener("click", () => {
-      testimonialVideo.src = card.getAttribute("data-video");
-      testimonialPopup.style.display = "flex";
-      testimonialVideo.play();
-    });
-  });
+            const testimonialCards = document.querySelectorAll(".homepage-testimonial-card");
+            const testimonialPopup = document.querySelector(".homepage-testimonial-popup");
+            const testimonialVideo = document.getElementById("homepage-testimonial-video");
+            const testimonialClose = document.querySelector(".homepage-testimonial-close");
 
 
-  /* CLOSE FUNCTION */
-  function closeTestimonialPopup(){
-    testimonialPopup.style.display = "none";
-    testimonialVideo.pause();
-    testimonialVideo.currentTime = 0;
-  }
+            /* OPEN */
+            testimonialCards.forEach(card => {
+                card.addEventListener("click", () => {
+                    testimonialVideo.src = card.getAttribute("data-video");
+                    testimonialPopup.style.display = "flex";
+                    testimonialVideo.play();
+                });
+            });
 
 
-  /* CLOSE BUTTON CLICK */
-  testimonialClose.addEventListener("click", closeTestimonialPopup);
+            /* CLOSE FUNCTION */
+            function closeTestimonialPopup() {
+                testimonialPopup.style.display = "none";
+                testimonialVideo.pause();
+                testimonialVideo.currentTime = 0;
+            }
 
 
-  /* CLICK OUTSIDE TO CLOSE */
-  testimonialPopup.addEventListener("click", e => {
-    if(e.target === testimonialPopup){
-      closeTestimonialPopup();
-    }
-  });
-
-});
-</script>
+            /* CLOSE BUTTON CLICK */
+            testimonialClose.addEventListener("click", closeTestimonialPopup);
 
 
+            /* CLICK OUTSIDE TO CLOSE */
+            testimonialPopup.addEventListener("click", e => {
+                if (e.target === testimonialPopup) {
+                    closeTestimonialPopup();
+                }
+            });
 
-<script>
-const tabs = document.querySelectorAll(".tab");
-const contents = document.querySelectorAll(".content");
+        });
+    </script>
 
-function activate(tab){
-    tabs.forEach(t=>t.classList.remove("active"));
-    tab.classList.add("active");
 
-    contents.forEach(c=>c.classList.remove("active"));
-    document.getElementById(tab.dataset.tab).classList.add("active");
-}
 
-tabs.forEach(tab=>{
-  tab.addEventListener("click", ()=>activate(tab));
-  tab.addEventListener("mouseover", ()=>activate(tab));
-});
-</script>
+    <script>
+        const tabs = document.querySelectorAll(".tab");
+        const contents = document.querySelectorAll(".content");
+
+        function activate(tab) {
+            tabs.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+
+            contents.forEach(c => c.classList.remove("active"));
+            document.getElementById(tab.dataset.tab).classList.add("active");
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener("click", () => activate(tab));
+            tab.addEventListener("mouseover", () => activate(tab));
+        });
+    </script>
 
 </body>
 
