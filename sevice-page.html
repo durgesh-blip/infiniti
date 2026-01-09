@@ -911,8 +911,106 @@
   </section>
   <!-- homepage-statssection-stats bg-image -->
 
+<section class="enterprise-custome-softawere-devlopment-software-service-page-pagination-section">
+
+  <div class="software-pagination-wrapper">
+
+    <button class="software-page-btn prev">←</button>
+
+    <div class="software-pagination-window">
+      <div class="software-pagination-track">
+
+        <div class="software-page-card">
+          <img src="./assets/images/aws1_icon.png">
+          <h3>Document management</h3>
+          <p>Organize, store, and secure your documents with solutions that enable easy access and collaboration.</p>
+        </div>
+
+        <div class="software-page-card">
+          <img src="./assets/images/aws1_icon.png">
+          <h3>CRM</h3>
+          <p>Build stronger customer relationships with tools that manage interactions, track sales, and provide insights.</p>
+        </div>
+
+        <div class="software-page-card">
+          <img src="./assets/images/aws1_icon.png">
+          <h3>Marketing & advertising</h3>
+          <p>Plan and execute marketing campaigns with tools that offer automation, analytics, and personalization.</p>
+        </div>
+
+        <div class="software-page-card">
+          <img src="./assets/images/aws1_icon.png">
+          <h3>Web portals</h3>
+          <p>Create secure and user-friendly web portals for customers, employees, or partners.</p>
+        </div>
+
+        <div class="software-page-card">
+          <img src="./assets/images/aws1_icon.png">
+          <h3>ERP</h3>
+          <p>Integrate finance, HR, and operations into a single system to improve efficiency.</p>
+        </div>
+
+        <div class="software-page-card">
+          <img src="./assets/images/aws1_icon.png">
+          <h3>HR Software</h3>
+          <p>Simplify recruitment, employee management, and performance tracking.</p>
+        </div>
+        <div class="software-page-card">
+          <img src="./assets/images/aws1_icon.png">
+          <h3>HR Software</h3>
+          <p>Simplify recruitment, employee management, and performance tracking.</p>
+        </div>
+        <div class="software-page-card">
+          <img src="./assets/images/aws1_icon.png">
+          <h3>HR Software</h3>
+          <p>Simplify recruitment, employee management, and performance tracking.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <button class="software-page-btn next">→</button>
+
+  </div>
+
+</section>
 
 
+
+
+<script>
+const section = document.querySelector(
+".enterprise-custome-softawere-devlopment-software-service-page-pagination-section"
+);
+
+const track = section.querySelector(".software-pagination-track");
+const cards = section.querySelectorAll(".software-page-card");
+const next = section.querySelector(".software-page-btn.next");
+const prev = section.querySelector(".software-page-btn.prev");
+
+const perPage = 4;
+let page = 0;
+
+function moveSlider(){
+  const cardWidth = cards[0].offsetWidth + 30;
+  track.style.transform = `translateX(-${page * perPage * cardWidth}px)`;
+}
+
+next.addEventListener("click", ()=>{
+  const maxPage = Math.ceil(cards.length / perPage) - 1;
+  if(page < maxPage){
+    page++;
+    moveSlider();
+  }
+});
+
+prev.addEventListener("click", ()=>{
+  if(page > 0){
+    page--;
+    moveSlider();
+  }
+});
+</script>
 
 
 <script>

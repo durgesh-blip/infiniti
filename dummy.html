@@ -401,6 +401,60 @@
 
 
 
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section{
+  padding:80px 40px;
+  background:#fff;
+}
+
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
+.software-pagination-wrapper{
+  max-width:1400px;
+  margin:auto;
+  position:relative;
+}
+
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
+.software-pagination-window{
+  overflow:hidden;
+}
+
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
+.software-pagination-track{
+  display:flex;
+  gap:30px;
+  transition:.6s ease;
+}
+
+/* CARD */
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
+.software-page-card{
+  flex:0 0 25%;
+  max-width:25%;
+  border:2px solid #eee;
+  border-radius:25px;
+  padding:40px 30px;
+  background:#fff;
+  box-sizing:border-box;
+}
+
+/* Icon animation */
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
+.software-page-card img{
+  width:60px;
+  margin-bottom:25px;
+  animation:softMoveReverse 4s ease-in-out infinite;
+}
+
+@keyframes softMoveReverse{
+  0%   { transform:translate(0,0); }
+  25%  { transform:translate(-2px, -2px); }
+  50%  { transform:translate(0, -3px); }
+  75%  { transform:translate(2px, -2px); }
+  100% { transform:translate(0,0); }
+}
+
+/* Pagination buttons */
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
 .software-page-btn{
   position:absolute;
   bottom:-70px;
@@ -411,107 +465,20 @@
   background:#fff;
   font-size:26px;
   cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:.3s;
 }
 
-.software-page-btn:hover{
-  background:#0d6efd;
-  color:#fff;
-  border-color:#0d6efd;
-}
-
-/* Center positioning like your screenshot */
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
 .software-page-btn.prev{
   left:50%;
   transform:translateX(-70px);
 }
 
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
 .software-page-btn.next{
   left:50%;
   transform:translateX(20px);
 }
 
-.software-pagination-section{
-  padding:80px 40px;
-  background:#fff;
-}
-
-.software-pagination-wrapper{
-  max-width:1400px;
-  margin:auto;
-  position:relative;
-}
-
-.software-pagination-window{
-  overflow:hidden;
-}
-
-.software-pagination-track{
-  display:flex;
-  gap:30px;
-  transition:.6s ease;
-}
-
-/* CARD */
-.software-page-card{
-  flex:0 0 25%;          /* 4 cards only */
-  max-width:25%;
-  border:2px solid #eee;
-  border-radius:25px;
-  padding:40px 30px;
-  background:#fff;
-  box-sizing:border-box;
-}
-
-
-.software-page-card img{
-  width:60px;
-}
-
-.software-page-card h3{
-  font-size:26px;
-  margin-bottom:15px;
-}
-
-.software-page-card p{
-  font-size:16px;
-  line-height:1.6;
-  color:#444;
-}
-
-/* PAGINATION */
-.software-page-btn{
-  position:absolute;
-  bottom:-60px;
-  width:48px;
-  height:48px;
-  border-radius:50%;
-  border:1px solid #ccc;
-  background:#fff;
-  font-size:22px;
-  cursor:pointer;
-}
-
-.software-page-btn.prev{ left:51%; }
-.software-page-btn.next{ right:48%; }
-
-.software-page-card img{
-  width:60px;
-  margin-bottom:25px;
-  animation:softMoveReverse 4s ease-in-out infinite;
-}
-
-/* Reverse micro motion */
-@keyframes softMoveReverse{
-  0%   { transform:translate(0,0); }
-  25%  { transform:translate(-2px, -2px); }
-  50%  { transform:translate(0, -3px); }
-  75%  { transform:translate(2px, -2px); }
-  100% { transform:translate(0,0); }
-}
 
 </style>
 <body>
@@ -683,75 +650,8 @@
 
 </div>
 
-<section class="software-pagination-section">
 
-  <div class="software-pagination-wrapper">
 
-    <button class="software-page-btn prev">←</button>
-
-    <div class="software-pagination-window">
-      <div class="software-pagination-track">
-
-        <!-- CARD 1 -->
-        <div class="software-page-card">
-          <img src="./assets/images/aws1_icon.png">
-          <h3>Document management</h3>
-          <p>Organize, store, and secure your documents with solutions that enable easy access and collaboration.</p>
-        </div>
-
-        <!-- CARD 2 -->
-        <div class="software-page-card">
-          <img src="./assets/images/aws1_icon.png">
-          <h3>CRM</h3>
-          <p>Build stronger customer relationships with tools that manage interactions, track sales, and provide insights.</p>
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="software-page-card">
-          <img src="./assets/images/aws1_icon.png">
-          <h3>Marketing & advertising</h3>
-          <p>Plan and execute marketing campaigns with tools that offer automation, analytics, and personalization.</p>
-        </div>
-
-        <!-- CARD 4 -->
-        <div class="software-page-card">
-          <img src="./assets/images/aws1_icon.png">
-          <h3>Web portals</h3>
-          <p>Create secure and user-friendly web portals for customers, employees, or partners.</p>
-        </div>
-
-        <!-- CARD 5 -->
-        <div class="software-page-card">
-          <img src="./assets/images/aws1_icon.png">
-          <h3>ERP</h3>
-          <p>Integrate finance, HR, and operations into a single system to improve efficiency.</p>
-        </div>
-
-        <!-- CARD 6 -->
-        <div class="software-page-card">
-          <img src="./assets/images/aws1_icon.png">
-          <h3>HR Software</h3>
-          <p>Simplify recruitment, employee management, and performance tracking.</p>
-        </div>
-        <div class="software-page-card">
-          <img src="./assets/images/aws1_icon.png">
-          <h3>HR Software</h3>
-          <p>Simplify recruitment, employee management, and performance tracking.</p>
-        </div>
-        <div class="software-page-card">
-          <img src="./assets/images/aws1_icon.png">
-          <h3>HR Software</h3>
-          <p>Simplify recruitment, employee management, and performance tracking.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <button class="software-page-btn next">→</button>
-
-  </div>
-
-</section>
 
 
 
@@ -764,18 +664,21 @@
 
 
 <script>
-const track = document.querySelector(".software-pagination-track");
-const cards = document.querySelectorAll(".software-page-card");
-const next = document.querySelector(".software-page-btn.next");
-const prev = document.querySelector(".software-page-btn.prev");
+const section = document.querySelector(
+".enterprise-custome-softawere-devlopment-software-service-page-pagination-section"
+);
 
-const perPage = 4;       // 4 cards per slide
-let page = 0;           // current page (0,1,2...)
+const track = section.querySelector(".software-pagination-track");
+const cards = section.querySelectorAll(".software-page-card");
+const next = section.querySelector(".software-page-btn.next");
+const prev = section.querySelector(".software-page-btn.prev");
+
+const perPage = 4;
+let page = 0;
 
 function moveSlider(){
-  const cardWidth = cards[0].offsetWidth + 30; // 30 = gap
-  const moveX = page * perPage * cardWidth;
-  track.style.transform = `translateX(-${moveX}px)`;
+  const cardWidth = cards[0].offsetWidth + 30;
+  track.style.transform = `translateX(-${page * perPage * cardWidth}px)`;
 }
 
 next.addEventListener("click", ()=>{
@@ -793,6 +696,7 @@ prev.addEventListener("click", ()=>{
   }
 });
 </script>
+
 
 
 

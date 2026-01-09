@@ -2644,3 +2644,104 @@ a.buid-service-videosection-service-page-btn.video-trigger {
 .advance-technoloy-in-service-page-hover p {
     color: #fff;
 }
+
+
+
+
+
+/* enterprise-custome-softawere-devlopment-software-service-page-pagination-section */
+
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section{
+  padding:80px 40px;
+  background:#fff;
+}
+
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
+.software-pagination-wrapper{
+  max-width:1400px;
+  margin:auto;
+  position:relative;
+}
+
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
+.software-pagination-window{
+  overflow:hidden;
+}
+
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
+.software-pagination-track{
+  display:flex;
+  gap:30px;
+  transition:.6s ease;
+}
+
+/* CARD */
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
+.software-page-card{
+  flex:0 0 25%;
+  max-width:25%;
+  border:2px solid #eee;
+  border-radius:25px;
+  padding:40px 30px;
+  background:#fff;
+  box-sizing:border-box;
+}
+
+/* Icon animation */
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
+.software-page-card img{
+  width:60px;
+  margin-bottom:25px;
+  animation:softMoveReverse 4s ease-in-out infinite;
+}
+
+@keyframes softMoveReverse{
+  0%   { transform:translate(0,0); }
+  25%  { transform:translate(-2px, -2px); }
+  50%  { transform:translate(0, -3px); }
+  75%  { transform:translate(2px, -2px); }
+  100% { transform:translate(0,0); }
+}
+
+/* Pagination buttons */
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
+.software-page-btn{
+  position:absolute;
+  bottom:-70px;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  border:1px solid #ddd;
+  background:#fff;
+  font-size:26px;
+  cursor:pointer;
+}
+
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
+.software-page-btn.prev{
+  left:50%;
+  transform:translateX(-70px);
+   color: #000;
+}
+
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
+.software-page-btn.next{
+  left:50%;
+  transform:translateX(20px);
+   color: #000;
+}
+.software-page-card h3 {
+    color: #000;
+    font-size: 25px;
+    font-weight: 500;
+}
+.software-page-card p {
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+
+
+/* enterprise-custome-softawere-devlopment-software-service-page-pagination-section */
