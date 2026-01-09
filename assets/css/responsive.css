@@ -91,3 +91,40 @@
     margin-bottom:15px;
   }
 }
+
+
+
+/* TABLET */
+@media(max-width:992px){
+  .service-with-right-enginnering-service-page-hover-card-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+/* MOBILE */
+@media(max-width:576px){
+  .service-with-right-enginnering-service-page-hover-card-grid{
+    grid-template-columns:1fr;
+  }
+
+  .service-with-right-enginnering-service-page-hover-card{
+    height:auto;
+  }
+
+  .service-with-right-enginnering-service-page-hover-card img{
+    height:220px;
+  }
+
+  .service-with-right-enginnering-service-page-card-hover{
+    position:relative;
+    opacity:1;
+    transform:none;
+    box-shadow:none;
+  }
+
+  .service-with-right-enginnering-service-page-card-front{
+    position:relative;
+    background:none;
+    padding:16px;
+  }
+}
