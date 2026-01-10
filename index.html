@@ -1002,72 +1002,6 @@
 
         <!-- ================= SLIDER START ================= -->
 
-        <!-- <section class="homepage-testimonial-slider">
-
-  <div class="homepage-testimonial-topbar">
-
-    <h2 class="homepage-testimonial-heading">
-      Client Testimonials
-    </h2>
-
-    <div class="homepage-testimonial-controls">
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </div>
-
-  </div>
-
-
-  <div class="homepage-testimonial-swiper myVideoSlider">
-    <div class="swiper-wrapper">
-
-  <div class="swiper-slide homepage-testimonial-card" data-video="./video/home_banner_video.mp4">
-    <img src="./assets/images/airlane.jpg">
-    <div class="homepage-testimonial-play-btn">▶</div>
-    <h3>David Ams</h3>
-    <p>Co Founder – Luxbubble</p>
-  </div>
-
-  <div class="swiper-slide homepage-testimonial-card" data-video="./video/home_banner_video.mp4">
-    <img src="./assets/images/airlane.jpg">
-    <div class="homepage-testimonial-play-btn">▶</div>
-    <h3>Marco Perez</h3>
-    <p>Co Founder – Bancreach</p>
-  </div>
-
-  <div class="swiper-slide homepage-testimonial-card" data-video="./video/home_banner_video.mp4">
-    <img src="./assets/images/airlane.jpg">
-    <div class="homepage-testimonial-play-btn">▶</div>
-    <h3>Mishari</h3>
-    <p>CEO – Logibids</p>
-  </div>
-
-  <div class="swiper-slide homepage-testimonial-card" data-video="./video/home_banner_video.mp4">
-    <img src="./assets/images/airlane.jpg">
-    <div class="homepage-testimonial-play-btn">▶</div>
-    <h3>Sarah Kim</h3>
-    <p>Founder – BrandPro</p>
-  </div>
-  <div class="swiper-slide homepage-testimonial-card" data-video="./video/home_banner_video.mp4">
-    <img src="./assets/images/airlane.jpg">
-    <div class="homepage-testimonial-play-btn">▶</div>
-    <h3>John Carter</h3>
-    <p>CTO – FinTech Hub</p>
-  </div>
-
-  <div class="swiper-slide homepage-testimonial-card" data-video="./video/home_banner_video.mp4">
-    <img src="./assets/images/airlane.jpg">
-    <div class="homepage-testimonial-play-btn">▶</div>
-    <h3>Maria Lopez</h3>
-    <p>Director – Bright Labs</p>
-  </div>
-
-</div>
-
-  </div>
-
-</section> -->
-
         <!-- ================= SLIDER END ================= -->
 
         <!-- ================= POPUP ================= -->
@@ -1357,6 +1291,271 @@
 
 
 
+        <style>
+           .navy-testimonial-slider{
+                padding: 100px 20px;
+                background: linear-gradient(180deg,#05142e,#071c3e);
+                }
+
+                /* Header */
+                .navy-testimonial-header{
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                margin-bottom:40px;
+                }
+
+                .navy-testimonial-header h2{
+                color:#fff;
+                font-size:32px;
+                }
+
+                /* Controls */
+                .navy-slider-controls button{
+                width:42px;
+                height:42px;
+                border-radius:50%;
+                border:1px solid rgba(255,255,255,.2);
+                background:rgba(255,255,255,.08);
+                color:#fff;
+                font-size:22px;
+                cursor:pointer;
+                transition:.3s;
+                }
+
+                .navy-slider-controls button:hover{
+                background:#fff;
+                color:#05142e;
+                }
+
+                /* Slider */
+                .navy-slider-viewport{
+                overflow:visible;
+                }
+
+                .navy-slider-track{
+                display:flex;
+                gap:24px;
+                transition:transform .5s ease;
+                }
+
+                /* Card */
+                .navy-testimonial-card{
+                min-width: calc(33.333% - 16px);
+                background:rgba(255,255,255,.06);
+                border:1px solid rgba(255,255,255,.08);
+                border-radius:18px;
+                padding:16px;
+                text-align:center;
+                position:relative;
+                transition:.3s;
+                cursor: pointer;
+                }
+
+                .navy-testimonial-card:hover{
+                transform:translateY(-6px);
+                background:rgba(255,255,255,.1);
+                }
+
+                .navy-testimonial-card img{
+                width:100%;
+                height:200px;
+                object-fit:cover;
+                border-radius:14px;
+                }
+
+                .navy-testimonial-card .play{
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                width:54px;
+                height:54px;
+                background:rgba(0,0,0,.55);
+                color:#fff;
+                border-radius:50%;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                pointer-events: none;
+                }
+
+                .navy-testimonial-card h3{
+                margin-top:14px;
+                color:#fff;
+                font-size:17px;
+                }
+
+                .navy-testimonial-card p{
+                font-size:13px;
+                color:rgba(255,255,255,.7);
+                }
+
+                /* Responsive */
+                @media(max-width:900px){
+                .navy-testimonial-card{
+                    min-width: calc(50% - 12px);
+                    cursor: pointer;
+                }
+                }
+
+                @media(max-width:600px){
+                .navy-testimonial-card{
+                    min-width:100%;
+                    cursor: pointer;
+                }
+                }
+.navy-video-modal{
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.navy-video-modal__overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
+}
+
+.navy-video-modal__content{
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  background: #000;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 40px 90px rgba(0,0,0,0.45);
+  z-index: 2;
+}
+
+.navy-video-modal video{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.navy-video-modal__close{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s;
+}
+
+.navy-video-modal__close:hover{
+  background: #ffffff;
+  color: #000;
+}
+
+        </style>
+        <section class="navy-testimonial-slider">
+
+        <div class="navy-testimonial-header">
+            <h2>Client Testimonials</h2>
+
+            <div class="navy-slider-controls">
+            <button id="navyPrev">‹</button>
+            <button id="navyNext">›</button>
+            </div>
+        </div>
+
+        <div class="navy-slider-viewport">
+            <div class="navy-slider-track">
+
+            <!-- CARD -->
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>David Ams</h3>
+                <p>Co Founder – Luxbubble</p>
+            </div>
+
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>Marco Perez</h3>
+                <p>Co Founder – Bancreach</p>
+            </div>
+
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>Mishari</h3>
+                <p>CEO – Logibids</p>
+            </div>
+
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>Sarah Kim</h3>
+                <p>Founder – BrandPro</p>
+            </div>
+
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>John Carter</h3>
+                <p>CTO – FinTech Hub</p>
+            </div>
+
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>Maria Lopez</h3>
+                <p>Director – Bright Labs</p>
+            </div>
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>Maria Lopez</h3>
+                <p>Director – Bright Labs</p>
+            </div>
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>Maria Lopez</h3>
+                <p>Director – Bright Labs</p>
+            </div>
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>Maria Lopez</h3>
+                <p>Director – Bright Labs</p>
+            </div>
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>Maria Lopez</h3>
+                <p>Director – Bright Labs</p>
+            </div>
+            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
+                <img src="./assets/images/airlane.jpg">
+                <span class="play">▶</span>
+                <h3>Maria Lopez</h3>
+                <p>Director – Bright Labs</p>
+            </div>
+
+            </div>
+        </div>
+
+        </section>
+
+
+        
         <!-- Start Client Area -->
         <section class="tab-section">
 
@@ -1806,269 +2005,6 @@
                 </div>
 
             </div>
-        </section>
-
-        <style>
-           .navy-testimonial-slider{
-                padding: 100px 20px;
-                background: linear-gradient(180deg,#05142e,#071c3e);
-                }
-
-                /* Header */
-                .navy-testimonial-header{
-                display:flex;
-                justify-content:space-between;
-                align-items:center;
-                margin-bottom:40px;
-                }
-
-                .navy-testimonial-header h2{
-                color:#fff;
-                font-size:32px;
-                }
-
-                /* Controls */
-                .navy-slider-controls button{
-                width:42px;
-                height:42px;
-                border-radius:50%;
-                border:1px solid rgba(255,255,255,.2);
-                background:rgba(255,255,255,.08);
-                color:#fff;
-                font-size:22px;
-                cursor:pointer;
-                transition:.3s;
-                }
-
-                .navy-slider-controls button:hover{
-                background:#fff;
-                color:#05142e;
-                }
-
-                /* Slider */
-                .navy-slider-viewport{
-                overflow:visible;
-                }
-
-                .navy-slider-track{
-                display:flex;
-                gap:24px;
-                transition:transform .5s ease;
-                }
-
-                /* Card */
-                .navy-testimonial-card{
-                min-width: calc(33.333% - 16px);
-                background:rgba(255,255,255,.06);
-                border:1px solid rgba(255,255,255,.08);
-                border-radius:18px;
-                padding:16px;
-                text-align:center;
-                position:relative;
-                transition:.3s;
-                cursor: pointer;
-                }
-
-                .navy-testimonial-card:hover{
-                transform:translateY(-6px);
-                background:rgba(255,255,255,.1);
-                }
-
-                .navy-testimonial-card img{
-                width:100%;
-                height:200px;
-                object-fit:cover;
-                border-radius:14px;
-                }
-
-                .navy-testimonial-card .play{
-                position:absolute;
-                top:50%;
-                left:50%;
-                transform:translate(-50%,-50%);
-                width:54px;
-                height:54px;
-                background:rgba(0,0,0,.55);
-                color:#fff;
-                border-radius:50%;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                pointer-events: none;
-                }
-
-                .navy-testimonial-card h3{
-                margin-top:14px;
-                color:#fff;
-                font-size:17px;
-                }
-
-                .navy-testimonial-card p{
-                font-size:13px;
-                color:rgba(255,255,255,.7);
-                }
-
-                /* Responsive */
-                @media(max-width:900px){
-                .navy-testimonial-card{
-                    min-width: calc(50% - 12px);
-                    cursor: pointer;
-                }
-                }
-
-                @media(max-width:600px){
-                .navy-testimonial-card{
-                    min-width:100%;
-                    cursor: pointer;
-                }
-                }
-.navy-video-modal{
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  display: none;
-  align-items: center;
-  justify-content: center;
-}
-
-.navy-video-modal__overlay{
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(12px);
-}
-
-.navy-video-modal__content{
-  position: relative;
-  width: 80%;
-  max-width: 900px;
-  background: #000;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 40px 90px rgba(0,0,0,0.45);
-  z-index: 2;
-}
-
-.navy-video-modal video{
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.navy-video-modal__close{
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.25s;
-}
-
-.navy-video-modal__close:hover{
-  background: #ffffff;
-  color: #000;
-}
-
-        </style>
-        <section class="navy-testimonial-slider">
-
-        <div class="navy-testimonial-header">
-            <h2>Client Testimonials</h2>
-
-            <div class="navy-slider-controls">
-            <button id="navyPrev">‹</button>
-            <button id="navyNext">›</button>
-            </div>
-        </div>
-
-        <div class="navy-slider-viewport">
-            <div class="navy-slider-track">
-
-            <!-- CARD -->
-            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
-                <img src="./assets/images/airlane.jpg">
-                <span class="play">▶</span>
-                <h3>David Ams</h3>
-                <p>Co Founder – Luxbubble</p>
-            </div>
-
-            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
-                <img src="./assets/images/airlane.jpg">
-                <span class="play">▶</span>
-                <h3>Marco Perez</h3>
-                <p>Co Founder – Bancreach</p>
-            </div>
-
-            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
-                <img src="./assets/images/airlane.jpg">
-                <span class="play">▶</span>
-                <h3>Mishari</h3>
-                <p>CEO – Logibids</p>
-            </div>
-
-            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
-                <img src="./assets/images/airlane.jpg">
-                <span class="play">▶</span>
-                <h3>Sarah Kim</h3>
-                <p>Founder – BrandPro</p>
-            </div>
-
-            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
-                <img src="./assets/images/airlane.jpg">
-                <span class="play">▶</span>
-                <h3>John Carter</h3>
-                <p>CTO – FinTech Hub</p>
-            </div>
-
-            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
-                <img src="./assets/images/airlane.jpg">
-                <span class="play">▶</span>
-                <h3>Maria Lopez</h3>
-                <p>Director – Bright Labs</p>
-            </div>
-            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
-                <img src="./assets/images/airlane.jpg">
-                <span class="play">▶</span>
-                <h3>Maria Lopez</h3>
-                <p>Director – Bright Labs</p>
-            </div>
-            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
-                <img src="./assets/images/airlane.jpg">
-                <span class="play">▶</span>
-                <h3>Maria Lopez</h3>
-                <p>Director – Bright Labs</p>
-            </div>
-            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
-                <img src="./assets/images/airlane.jpg">
-                <span class="play">▶</span>
-                <h3>Maria Lopez</h3>
-                <p>Director – Bright Labs</p>
-            </div>
-            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
-                <img src="./assets/images/airlane.jpg">
-                <span class="play">▶</span>
-                <h3>Maria Lopez</h3>
-                <p>Director – Bright Labs</p>
-            </div>
-            <div class="navy-testimonial-card" data-video="./video/home_banner_video.mp4">
-                <img src="./assets/images/airlane.jpg">
-                <span class="play">▶</span>
-                <h3>Maria Lopez</h3>
-                <p>Director – Bright Labs</p>
-            </div>
-
-            </div>
-        </div>
-
         </section>
 
 
@@ -3335,6 +3271,218 @@
 
     </main>
 
+    <style>
+        .apptunix-footer{
+  background: radial-gradient(circle at top left,#0b1d3a,#020814);
+  padding:80px 20px;
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.footer-container{
+  max-width:1400px;
+  margin:auto;
+  display:grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr;
+  gap:50px;
+}
+
+.footer-col h4{
+  margin-bottom:20px;
+  font-size:18px;
+}
+
+.footer-col ul{
+  list-style:none;
+  padding:0;
+}
+
+.footer-col ul li{
+  margin-bottom:14px;
+}
+
+.footer-col ul li a{
+  color:#cfd8e3;
+  text-decoration:none;
+  font-size:15px;
+  line-height:1.6;
+}
+
+.footer-col ul li a:hover{
+  color:#0a7cff;
+}
+
+.footer-col .highlight{
+  color:#0a7cff;
+}
+
+.brand .logo{
+  font-size:34px;
+  font-weight:700;
+  margin-bottom:15px;
+}
+
+.brand p{
+  color:#cfd8e3;
+  margin-bottom:25px;
+}
+
+.footer-btn{
+  display:inline-block;
+  background:#0a7cff;
+  padding:12px 28px;
+  border-radius:30px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  margin-bottom:25px;
+}
+
+.sales{
+  margin:20px 0;
+}
+
+.sales a{
+  display:block;
+  margin-top:5px;
+  color:#fff;
+}
+
+.dmca{
+  margin-top:20px;
+  width:120px;
+}
+
+.subscribe p{
+  margin-bottom:15px;
+  color:#cfd8e3;
+}
+
+.subscribe-form{
+  display:flex;
+  margin-bottom:10px;
+}
+
+.subscribe-form input{
+  flex:1;
+  padding:12px;
+  border:none;
+  outline:none;
+  border-radius:6px 0 0 6px;
+}
+
+.subscribe-form button{
+  background:#0a7cff;
+  color:#fff;
+  border:none;
+  padding:12px 20px;
+  border-radius:0 6px 6px 0;
+  cursor:pointer;
+}
+
+.subscribe small{
+  display:block;
+  margin-bottom:20px;
+  color:#8aa0b6;
+}
+
+.social{
+  display:flex;
+  gap:12px;
+}
+
+.social a{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:#0a7cff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  text-decoration:none;
+}
+    </style>
+<footer class="apptunix-footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-col brand">
+      <h2 class="logo">Apptunix</h2>
+      <p>Ready to transform your business digitally?</p>
+
+      <a href="#" class="footer-btn">Contact Now!</a>
+
+      <div class="sales">
+        <strong>For sales enquiries:</strong>
+        <a href="mailto:sales@apptunix.com">sales@apptunix.com</a>
+      </div>
+
+      <img src="assets/images/dmca.png" class="dmca" alt="DMCA">
+    </div>
+
+    <!-- RECENT GUIDES -->
+    <div class="footer-col">
+      <h4>Recent e-guides</h4>
+      <ul>
+        <li><a href="#">App Monetization Strategies: How to Make Money From an App?</a></li>
+        <li><a href="#">A Comprehensive Guide To Mobile App Development in 2025 – 2026</a></li>
+        <li><a href="#">Telemedicine 2.0 – A Comprehensive Guide</a></li>
+        <li><a href="#">Electric Vehicle Software Development – A Comprehensive Guide</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">App Development Services</a></li>
+        <li><a href="#">AI Development Services</a></li>
+        <li><a href="#">Software Development Services</a></li>
+        <li><a href="#">Web App Development</a></li>
+        <li><a href="#" class="highlight">Hire Software Developers</a></li>
+        <li><a href="#">Hire App Developers</a></li>
+        <li><a href="#">Digital Marketing Services</a></li>
+      </ul>
+    </div>
+
+    <!-- EXPERTISE -->
+    <div class="footer-col">
+      <h4>Expertise</h4>
+      <ul>
+        <li><a href="#">White Label App Development</a></li>
+        <li><a href="#">Ecommerce App Development</a></li>
+        <li><a href="#">Blockchain App Development</a></li>
+        <li><a href="#">Fintech App Development</a></li>
+        <li><a href="#">AR / VR App Development</a></li>
+        <li><a href="#">Food Delivery App Development</a></li>
+        <li><a href="#">Grocery Delivery App Development</a></li>
+      </ul>
+    </div>
+
+    <!-- SUBSCRIBE -->
+    <div class="footer-col subscribe">
+      <h4>Subscribe US</h4>
+      <p>Make the right business move.</p>
+
+      <form class="subscribe-form">
+        <input type="email" placeholder="Email address">
+        <button type="submit">Send</button>
+      </form>
+
+      <small>Your email ID is confidential.</small>
+
+      <div class="social">
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+
+  </div>
+</footer>
     <!-- End Footer Area -->
     <!-- JS ============================================ -->
     <script src="assets/js/vendor/custome.js"></script>
