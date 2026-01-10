@@ -401,6 +401,60 @@
 
 
 
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section{
+  padding:80px 40px;
+  background:#fff;
+}
+
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
+.software-pagination-wrapper{
+  max-width:1400px;
+  margin:auto;
+  position:relative;
+}
+
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
+.software-pagination-window{
+  overflow:hidden;
+}
+
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
+.software-pagination-track{
+  display:flex;
+  gap:30px;
+  transition:.6s ease;
+}
+
+/* CARD */
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
+.software-page-card{
+  flex:0 0 25%;
+  max-width:25%;
+  border:2px solid #eee;
+  border-radius:25px;
+  padding:40px 30px;
+  background:#fff;
+  box-sizing:border-box;
+}
+
+/* Icon animation */
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
+.software-page-card img{
+  width:60px;
+  margin-bottom:25px;
+  animation:softMoveReverse 4s ease-in-out infinite;
+}
+
+@keyframes softMoveReverse{
+  0%   { transform:translate(0,0); }
+  25%  { transform:translate(-2px, -2px); }
+  50%  { transform:translate(0, -3px); }
+  75%  { transform:translate(2px, -2px); }
+  100% { transform:translate(0,0); }
+}
+
+/* Pagination buttons */
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
 .software-page-btn{
   position:absolute;
   bottom:-70px;
@@ -411,107 +465,301 @@
   background:#fff;
   font-size:26px;
   cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:.3s;
 }
 
-.software-page-btn:hover{
-  background:#0d6efd;
-  color:#fff;
-  border-color:#0d6efd;
-}
-
-/* Center positioning like your screenshot */
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
 .software-page-btn.prev{
   left:50%;
   transform:translateX(-70px);
 }
 
+.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
 .software-page-btn.next{
   left:50%;
   transform:translateX(20px);
 }
 
-.software-pagination-section{
-  padding:80px 40px;
-  background:#fff;
+
+
+.apptunix-footer{
+  background: radial-gradient(circle at top left,#0b1d3a,#020814);
+  padding:80px 20px;
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
-.software-pagination-wrapper{
+.footer-container{
   max-width:1400px;
   margin:auto;
-  position:relative;
+  display:grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr;
+  gap:50px;
 }
 
-.software-pagination-window{
-  overflow:hidden;
+.footer-col h4{
+  margin-bottom:20px;
+  font-size:18px;
 }
 
-.software-pagination-track{
-  display:flex;
-  gap:30px;
-  transition:.6s ease;
+.footer-col ul{
+  list-style:none;
+  padding:0;
 }
 
-/* CARD */
-.software-page-card{
-  flex:0 0 25%;          /* 4 cards only */
-  max-width:25%;
-  border:2px solid #eee;
-  border-radius:25px;
-  padding:40px 30px;
-  background:#fff;
-  box-sizing:border-box;
+.footer-col ul li{
+  margin-bottom:14px;
 }
 
-
-.software-page-card img{
-  width:60px;
+.footer-col ul li a{
+  color:#cfd8e3;
+  text-decoration:none;
+  font-size:15px;
+  line-height:1.6;
 }
 
-.software-page-card h3{
-  font-size:26px;
+.footer-col ul li a:hover{
+  color:#0a7cff;
+}
+
+.footer-col .highlight{
+  color:#0a7cff;
+}
+
+.brand .logo{
+  font-size:34px;
+  font-weight:700;
   margin-bottom:15px;
 }
 
-.software-page-card p{
-  font-size:16px;
-  line-height:1.6;
-  color:#444;
+.brand p{
+  color:#cfd8e3;
+  margin-bottom:25px;
 }
 
-/* PAGINATION */
-.software-page-btn{
-  position:absolute;
-  bottom:-60px;
-  width:48px;
-  height:48px;
-  border-radius:50%;
-  border:1px solid #ccc;
-  background:#fff;
-  font-size:22px;
+.footer-btn{
+  display:inline-block;
+  background:#0a7cff;
+  padding:12px 28px;
+  border-radius:30px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  margin-bottom:25px;
+}
+
+.sales{
+  margin:20px 0;
+}
+
+.sales a{
+  display:block;
+  margin-top:5px;
+  color:#fff;
+}
+
+.dmca{
+  margin-top:20px;
+  width:120px;
+}
+
+.subscribe p{
+  margin-bottom:15px;
+  color:#cfd8e3;
+}
+
+.subscribe-form{
+  display:flex;
+  margin-bottom:10px;
+}
+
+.subscribe-form input{
+  flex:1;
+  padding:12px;
+  border:none;
+  outline:none;
+  border-radius:6px 0 0 6px;
+}
+
+.subscribe-form button{
+  background:#0a7cff;
+  color:#fff;
+  border:none;
+  padding:12px 20px;
+  border-radius:0 6px 6px 0;
   cursor:pointer;
 }
 
-.software-page-btn.prev{ left:51%; }
-.software-page-btn.next{ right:48%; }
+.subscribe small{
+  display:block;
+  margin-bottom:20px;
+  color:#8aa0b6;
+}
 
-.software-page-card img{
+.social{
+  display:flex;
+  gap:12px;
+}
+
+.social a{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:#0a7cff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  text-decoration:none;
+}
+
+
+
+
+
+
+
+.brand-slider-section{
+  background:#000;
+  padding:80px 0;
+  overflow:hidden;
+}
+
+.brand-slider-section h2{
+  text-align:center;
+  color:#fff;
+  font-size:42px;
+  margin-bottom:50px;
+  font-weight:700;
+  line-height:1.3;
+}
+
+/* main slider */
+.brand-slider{
+  width:100%;
+  overflow:hidden;
+}
+
+/* moving track */
+.brand-track{
+  display:flex;
+  width:max-content;
+  animation:scroll 20s linear infinite;
+}
+
+/* pause on hover */
+.brand-slider:hover .brand-track{
+  animation-play-state:paused;
+}
+
+/* each logo card */
+.brand-item{
+  min-width:220px;
+  height:120px;
+  background:#fff;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 15px;
+  box-shadow:0 0 30px rgba(255,255,255,.15);
+}
+
+.brand-item img{
+  max-width:150px;
+  max-height:70px;
+  object-fit:contain;
+}
+
+/* animation */
+@keyframes scroll{
+  0%{ transform:translateX(0); }
+  100%{ transform:translateX(-50%); }
+}
+
+/* responsive */
+@media(max-width:768px){
+  .brand-item{
+    min-width:170px;
+    height:90px;
+  }
+
+  .brand-slider-section h2{
+    font-size:28px;
+  }
+}
+
+
+
+
+.enterprise-custom-software-devlopment-software-service-page-feature-slider{
+  width:100%;
+  padding:80px 0;
+  overflow:hidden;
+}
+
+/* these names already used by your JS */
+.slides{
+  display:flex;
+}
+
+.slide{
+  min-width:33.33%;
+  padding:15px;
+}
+
+/* glass card */
+.glass-feature-card{
+  background:rgba(255,255,255,.95);
+  border-radius:25px;
+  padding:40px;
+  height:100%;
+  box-shadow:0 20px 60px rgba(0,0,0,.15);
+}
+
+.glass-feature-card .icon{
   width:60px;
-  margin-bottom:25px;
-  animation:softMoveReverse 4s ease-in-out infinite;
+  margin-bottom:20px;
 }
 
-/* Reverse micro motion */
-@keyframes softMoveReverse{
-  0%   { transform:translate(0,0); }
-  25%  { transform:translate(-2px, -2px); }
-  50%  { transform:translate(0, -3px); }
-  75%  { transform:translate(2px, -2px); }
-  100% { transform:translate(0,0); }
+.glass-feature-card h3{
+  font-size:24px;
+  margin-bottom:15px;
 }
+
+.glass-feature-card p{
+  font-size:15px;
+  line-height:1.6;
+  color:#555;
+}
+
+/* image cards */
+.image-feature-card{
+  position:relative;
+  height:100%;
+  border-radius:25px;
+  overflow:hidden;
+}
+
+.image-feature-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.feature-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.7),transparent);
+  display:flex;
+  align-items:flex-end;
+  padding:30px;
+}
+
+.feature-overlay h3{
+  color:#fff;
+  font-size:24px;
+}
+
 
 </style>
 <body>
@@ -683,7 +931,7 @@
 
 </div>
 
-<section class="software-pagination-section">
+<section class="enterprise-custome-softawere-devlopment-software-service-page-pagination-section">
 
   <div class="software-pagination-wrapper">
 
@@ -692,42 +940,36 @@
     <div class="software-pagination-window">
       <div class="software-pagination-track">
 
-        <!-- CARD 1 -->
         <div class="software-page-card">
           <img src="./assets/images/aws1_icon.png">
           <h3>Document management</h3>
           <p>Organize, store, and secure your documents with solutions that enable easy access and collaboration.</p>
         </div>
 
-        <!-- CARD 2 -->
         <div class="software-page-card">
           <img src="./assets/images/aws1_icon.png">
           <h3>CRM</h3>
           <p>Build stronger customer relationships with tools that manage interactions, track sales, and provide insights.</p>
         </div>
 
-        <!-- CARD 3 -->
         <div class="software-page-card">
           <img src="./assets/images/aws1_icon.png">
           <h3>Marketing & advertising</h3>
           <p>Plan and execute marketing campaigns with tools that offer automation, analytics, and personalization.</p>
         </div>
 
-        <!-- CARD 4 -->
         <div class="software-page-card">
           <img src="./assets/images/aws1_icon.png">
           <h3>Web portals</h3>
           <p>Create secure and user-friendly web portals for customers, employees, or partners.</p>
         </div>
 
-        <!-- CARD 5 -->
         <div class="software-page-card">
           <img src="./assets/images/aws1_icon.png">
           <h3>ERP</h3>
           <p>Integrate finance, HR, and operations into a single system to improve efficiency.</p>
         </div>
 
-        <!-- CARD 6 -->
         <div class="software-page-card">
           <img src="./assets/images/aws1_icon.png">
           <h3>HR Software</h3>
@@ -758,24 +1000,303 @@
 
 
 
+<footer class="apptunix-footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-col brand">
+      <h2 class="logo">Apptunix</h2>
+      <p>Ready to transform your business digitally?</p>
+
+      <a href="#" class="footer-btn">Contact Now!</a>
+
+      <div class="sales">
+        <strong>For sales enquiries:</strong>
+        <a href="mailto:sales@apptunix.com">sales@apptunix.com</a>
+      </div>
+
+      <img src="assets/images/dmca.png" class="dmca" alt="DMCA">
+    </div>
+
+    <!-- RECENT GUIDES -->
+    <div class="footer-col">
+      <h4>Recent e-guides</h4>
+      <ul>
+        <li><a href="#">App Monetization Strategies: How to Make Money From an App?</a></li>
+        <li><a href="#">A Comprehensive Guide To Mobile App Development in 2025 – 2026</a></li>
+        <li><a href="#">Telemedicine 2.0 – A Comprehensive Guide</a></li>
+        <li><a href="#">Electric Vehicle Software Development – A Comprehensive Guide</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">App Development Services</a></li>
+        <li><a href="#">AI Development Services</a></li>
+        <li><a href="#">Software Development Services</a></li>
+        <li><a href="#">Web App Development</a></li>
+        <li><a href="#" class="highlight">Hire Software Developers</a></li>
+        <li><a href="#">Hire App Developers</a></li>
+        <li><a href="#">Digital Marketing Services</a></li>
+      </ul>
+    </div>
+
+    <!-- EXPERTISE -->
+    <div class="footer-col">
+      <h4>Expertise</h4>
+      <ul>
+        <li><a href="#">White Label App Development</a></li>
+        <li><a href="#">Ecommerce App Development</a></li>
+        <li><a href="#">Blockchain App Development</a></li>
+        <li><a href="#">Fintech App Development</a></li>
+        <li><a href="#">AR / VR App Development</a></li>
+        <li><a href="#">Food Delivery App Development</a></li>
+        <li><a href="#">Grocery Delivery App Development</a></li>
+      </ul>
+    </div>
+
+    <!-- SUBSCRIBE -->
+    <div class="footer-col subscribe">
+      <h4>Subscribe US</h4>
+      <p>Make the right business move.</p>
+
+      <form class="subscribe-form">
+        <input type="email" placeholder="Email address">
+        <button type="submit">Send</button>
+      </form>
+
+      <small>Your email ID is confidential.</small>
+
+      <div class="social">
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+
+  </div>
+</footer>
 
 
 
+
+
+<section class="brand-slider-section">
+  <h2>
+    Custom Software Development Solutions<br>
+    Developed By Apptunix Have Been Featured In
+  </h2>
+
+  <div class="brand-slider">
+    <div class="brand-track">
+
+      <div class="brand-item"><img src="assets/images/khaleej.png"></div>
+      <div class="brand-item"><img src="assets/images/verge.png"></div>
+      <div class="brand-item"><img src="assets/images/techcrunch.png"></div>
+      <div class="brand-item"><img src="assets/images/cnn.png"></div>
+      <div class="brand-item"><img src="assets/images/forbes.png"></div>
+      <div class="brand-item"><img src="assets/images/inc.png"></div>
+
+      <!-- duplicate for infinite loop -->
+      <div class="brand-item"><img src="assets/images/khaleej.png"></div>
+      <div class="brand-item"><img src="assets/images/verge.png"></div>
+      <div class="brand-item"><img src="assets/images/techcrunch.png"></div>
+      <div class="brand-item"><img src="assets/images/cnn.png"></div>
+      <div class="brand-item"><img src="assets/images/forbes.png"></div>
+      <div class="brand-item"><img src="assets/images/inc.png"></div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="enterprise-custom-software-devlopment-software-service-page-feature-slider">
+
+  <div class="slides">   <!-- this matches your existing JS -->
+
+    <!-- SLIDE 0 -->
+    <div class="slide active">
+      <div class="glass-feature-card">
+        <img src="./assets/images/security-icon.png" class="icon">
+        <h3>Focus on Security and Scalability</h3>
+        <p>
+          Our custom software development company prioritizes building software with
+          robust security measures to ensure software integrity. Our custom software
+          development services include designing solutions that are scalable and can
+          accommodate future growth.
+        </p>
+      </div>
+    </div>
+
+    <!-- SLIDE 1 -->
+    <div class="slide">
+      <div class="image-feature-card">
+        <img src="./assets/images/integration.jpg">
+        <div class="feature-overlay">
+          <h3>Experience with Complex<br>Integrations</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="slide">
+      <div class="image-feature-card">
+        <img src="./assets/images/performance.jpg">
+        <div class="feature-overlay">
+          <h3>Commitment to Performance<br>Optimization</h3>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<style>
+.choose-the-right-model-service-page{
+  padding:70px 20px;
+  background:#f6f8fc;
+}
+
+/* Tabs */
+.choose-the-right-model-service-page-tabs{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin-bottom:40px;
+}
+
+.choose-the-right-model-service-page-tab{
+  padding:14px 36px;
+  border:2px solid #0d6efd;
+  border-radius:10px;
+  font-size:18px;
+  cursor:pointer;
+  transition:.3s;
+  background:#fff;
+}
+
+.choose-the-right-model-service-page-tab.active,
+.choose-the-right-model-service-page-tab:hover{
+  background:#0d6efd;
+  color:#fff;
+}
+
+/* Content */
+.choose-the-right-model-service-page-content{
+  display:none;
+  background:#fff;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 10px 40px rgba(0,0,0,.08);
+}
+
+.choose-the-right-model-service-page-content.active{
+  display:block;
+}
+
+.choose-the-right-model-service-page-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.choose-the-right-model-service-page-image img{
+  width:100%;
+  border-radius:20px;
+}
+
+.choose-the-right-model-service-page-text h2{
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+.choose-the-right-model-service-page-text ul{
+  list-style:none;
+  padding:0;
+}
+
+.choose-the-right-model-service-page-text li{
+  font-size:18px;
+  margin:12px 0;
+}
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script>
+const track = document.querySelector(".carousel-track");
+const cards = document.querySelectorAll(".focus-card");
+let index = 1;
+
+function update(){
+  const offset = -(index * 390) + 390;
+  track.style.transform = `translateX(${offset}px)`;
+
+  cards.forEach(c=>c.classList.remove("active"));
+  cards[index].classList.add("active");
+}
+
+update();
+
+document.querySelector(".right").onclick = () => {
+  if(index < cards.length - 1){
+    index++;
+    update();
+  }
+}
+
+document.querySelector(".left").onclick = () => {
+  if(index > 0){
+    index--;
+    update();
+  }
+}
+
+</script> -->
 
 
 <script>
-const track = document.querySelector(".software-pagination-track");
-const cards = document.querySelectorAll(".software-page-card");
-const next = document.querySelector(".software-page-btn.next");
-const prev = document.querySelector(".software-page-btn.prev");
+const section = document.querySelector(
+".enterprise-custome-softawere-devlopment-software-service-page-pagination-section"
+);
 
-const perPage = 4;       // 4 cards per slide
-let page = 0;           // current page (0,1,2...)
+const track = section.querySelector(".software-pagination-track");
+const cards = section.querySelectorAll(".software-page-card");
+const next = section.querySelector(".software-page-btn.next");
+const prev = section.querySelector(".software-page-btn.prev");
+
+const perPage = 4;
+let page = 0;
 
 function moveSlider(){
-  const cardWidth = cards[0].offsetWidth + 30; // 30 = gap
-  const moveX = page * perPage * cardWidth;
-  track.style.transform = `translateX(-${moveX}px)`;
+  const cardWidth = cards[0].offsetWidth + 30;
+  track.style.transform = `translateX(-${page * perPage * cardWidth}px)`;
 }
 
 next.addEventListener("click", ()=>{
@@ -793,6 +1314,7 @@ prev.addEventListener("click", ()=>{
   }
 });
 </script>
+  
 
 
 

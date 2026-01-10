@@ -128,3 +128,36 @@
     padding:16px;
   }
 }
+
+
+
+
+@media(max-width:900px){
+  .unlock-limitless-scalability-service-page-scalability-box{
+    flex-direction:column;
+    padding:40px;
+  }
+
+  .unlock-limitless-scalability-service-page-scalability-content,
+  .unlock-limitless-scalability-service-page-scalability-image{
+    width:100%;
+  }
+
+  .unlock-limitless-scalability-service-page-scalability-step{
+    font-size:80px;
+    top:-30px;
+  }
+}
+
+
+/* MOBILE */
+@media(max-width:900px){
+  .grow-with-you-service-page{
+    height:auto;
+    border-radius:25px;
+  }
+
+  .grow-with-you-service-page-content h2{
+    font-size:28px;
+  }
+}
