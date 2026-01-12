@@ -437,3 +437,43 @@
 
 
 })(jQuery, window)
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const triggers = document.querySelectorAll(".video-trigger");
+  const popup = document.getElementById(
+    "buid-service-videosection-service-page-videoPopup"
+  );
+  const closeBtn = document.querySelector(
+    ".buid-service-videosection-service-page-close-video"
+  );
+  const iframe = document.getElementById(
+    "buid-service-videosection-service-page-videoFrame"
+  );
+
+  if (!triggers.length || !popup || !closeBtn || !iframe) return;
+
+  /* OPEN */
+  triggers.forEach(trigger => {
+    trigger.addEventListener("click", () => {
+      popup.style.display = "flex";
+      iframe.src =
+        "https://youtu.be/P96xEX9AJzM?si=A6pVpD4HGeDC1xNV";
+    });
+  });
+
+  /* CLOSE */
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+    iframe.src = "";
+  });
+
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.style.display = "none";
+      iframe.src = "";
+    }
+  });
+
+});

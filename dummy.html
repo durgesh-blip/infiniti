@@ -1,996 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>.service-with-right-enginnering-service-page{
-  width:100%;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gym App Tabs</title>
+
+<style>
+.fitness-app-clone-carousel{
+  position:relative;
+  padding:120px 0;
+  background:#f5f8fc;
+  perspective:1400px;
 }
 
-/* SECTION */
-.service-with-right-enginnering-service-page-hover-card-section{
-  background:#0b0b0b;
-  padding:80px 16px;
-}
-
-/* GRID */
-.service-with-right-enginnering-service-page-hover-card-grid{
-  max-width:1400px;
+.fitness-carousel-track{
+  position:relative;
+  height:450px;
+  max-width:1100px;
   margin:auto;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:24px;
 }
 
-/* CARD */
-.service-with-right-enginnering-service-page-hover-card{
-  position:relative;
-  height:400px;
-  border-radius:18px;
-  overflow:hidden;
-}
-
-/* IMAGE */
-.service-with-right-enginnering-service-page-hover-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:.4s ease;
-}
-
-/* FRONT */
-.service-with-right-enginnering-service-page-card-front{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.2));
-  display:flex;
-  align-items:flex-end;
-  padding:22px;
-  color:#fff;
-  transition:.3s ease;
-}
-.service-with-right-enginnering-service-page-card-hover{
-  position:absolute;
-  inset:0;
-  background:#1666ff;
-  color:#fff;
-  padding:26px;
-  display:flex;
-  align-items:center;
-
-  opacity:0;
-  transform:translateX(30px); /* ONLY right → left */
-
-  box-shadow:0 0 0 rgba(0,0,0,0);
-
-  transition:
-    opacity .35s ease,
-    transform .35s ease,
-    box-shadow .35s ease;
-}
-
-
-@media (hover:hover){
-  .service-with-right-enginnering-service-page-hover-card:hover 
-  .service-with-right-enginnering-service-page-card-hover{
-    box-shadow:
-      0 8px 18px rgba(0,0,0,0.25),
-      0 30px 70px rgba(0,0,0,0.45);
-  }
-}
-
-
-/* TEXT SHADOW */
-.service-with-right-enginnering-service-page-card-hover p{
-  text-shadow:0 3px 8px rgba(0,0,0,0.4);
-}
-
-/* HOVER */
-@media (hover:hover){
-  .service-with-right-enginnering-service-page-hover-card:hover img{
-    transform:scale(1.06);
-  }
-
-  .service-with-right-enginnering-service-page-hover-card:hover 
-  .service-with-right-enginnering-service-page-card-front{
-    opacity:0;
-  }
-
-  .service-with-right-enginnering-service-page-hover-card:hover 
-  .service-with-right-enginnering-service-page-card-hover{
-    opacity:1;
-    transform:translateX(0);
-    box-shadow:0 18px 40px rgba(0,0,0,0.35);
-  }
-}
-
-/* TABLET */
-@media(max-width:992px){
-  .service-with-right-enginnering-service-page-hover-card-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-/* MOBILE */
-@media(max-width:576px){
-  .service-with-right-enginnering-service-page-hover-card-grid{
-    grid-template-columns:1fr;
-  }
-
-  .service-with-right-enginnering-service-page-hover-card{
-    height:auto;
-  }
-
-  .service-with-right-enginnering-service-page-hover-card img{
-    height:220px;
-  }
-
-  .service-with-right-enginnering-service-page-card-hover{
-    position:relative;
-    opacity:1;
-    transform:none;
-    box-shadow:none;
-  }
-
-  .service-with-right-enginnering-service-page-card-front{
-    position:relative;
-    background:none;
-    padding:16px;
-  }
-}
-
-
-
-
-
-
-.buid-service-videosection-service-page-video-banner{
-  position:relative;
-  cursor:pointer;
-  max-width:100%;
-}
-
-.buid-service-videosection-service-page-video-banner img{
-  width:100%;
-  border-radius:20px;
-}
-
-/* PLAY ICON */
-.buid-service-videosection-service-page-play-btn{
+.fitness-slide{
   position:absolute;
   top:50%;
   left:50%;
-  transform:translate(-50%,-50%);
-  width:70px;
-  height:70px;
+  width:340px;
+  padding:35px;
   background:#fff;
-  color:#000;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:28px;
+  border-radius:28px;
+  text-align:center;
+  box-shadow:0 40px 80px rgba(0,0,0,.1);
+  transform-style:preserve-3d;
+  transition:.7s;
+  opacity:.4;
 }
 
-/* POPUP */
-.buid-service-videosection-service-page-video-popup{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.8);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:99999;
-}
-
-.buid-service-videosection-service-page-video-popup-content{
-  position:relative;
-  width:80%;
-  max-width:900px;
-}
-
-.buid-service-videosection-service-page-video-popup-content iframe{
+.fitness-slide img{
   width:100%;
-  height:500px;
-  border-radius:14px;
-}
-
-/* CLOSE */
-.buid-service-videosection-service-page-close-video{
-  position:absolute;
-  top:-40px;
-  right:0;
-  font-size:40px;
-  color:#fff;
-  cursor:pointer;
-}
-
-
-
-
-
-
-
-
-/* accordion */
-.process-content-servicepage{
-  display:none;
-}
-
-.process-item-servicepage.active .process-content-servicepage{
-  display:block;
-}
-
-
-/* heading */
-.process-title-servicepage{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:24px 0;
-  cursor:pointer;
-  border-bottom:1px solid #ddd;
-}
-
-.process-title-servicepage h3{
-  font-size:24px;
-  font-weight:600;
-}
-
-/* arrow */
-.arrow{
-  transition:.3s;
-}
-
-.process-item-servicepage.active .arrow{
-  transform:rotate(180deg);
-}
-
-/* BLACK BOX */
-.process-blackbox-servicepage{
-  background:#000;
-  color:#fff;
   border-radius:18px;
-  padding:45px;
-  margin:25px 0;
-  display:flex;
-  gap:40px;
+  margin-bottom:20px;
+}
+
+.fitness-slide h3{font-size:22px;font-weight:700;margin-bottom:12px;}
+.fitness-slide p{font-size:15px;line-height:1.6;color:#444}
+
+/* ACTIVE (CENTER) */
+.fitness-slide.active{
+  transform:translate(-50%,-50%) scale(1.1);
+  background:#1f96d6;
+  color:#fff;
+  opacity:1;
+  z-index:5;
 }
 
 /* LEFT */
-.process-blackbox-left-servicepage{
-  width:50%;
-}
-
-.process-blackbox-left-servicepage h4{
-  font-size:28px;
-  margin-bottom:16px;
-}
-
-.process-blackbox-left-servicepage p{
-  color:#dcdcdc;
-  line-height:1.7;
+.fitness-slide.left{
+  transform:translate(-150%,-50%) rotateY(28deg) scale(.9);
+  z-index:2;
 }
 
 /* RIGHT */
-.process-blackbox-right-servicepage{
-  width:50%;
-  display:flex;
-  align-items:center;
-}
-
-.process-blackbox-right-servicepage ul{
-  list-style:none;
-  padding:0;
-}
-
-.process-blackbox-right-servicepage li{
-  margin-bottom:18px;
-  font-size:18px;
-  display:flex;
-  align-items:center;
-}
-
-.process-blackbox-right-servicepage li::before{
-  content:"✔";
-  color:#1e7bff;
-  margin-right:14px;
-  font-weight:bold;
-}
-
-
-
-
-/* CARD */
-.advance-technoloy-in-service-page-card{
-  height:320px;
-}
-
-/* INNER WRAPPER */
-.advance-technoloy-in-service-page-card-inner{
-  width:100%;
-  height:100%;
-  position:relative;
-  border-radius:28px;
-  overflow:hidden;
-  cursor:pointer;
-}
-
-/* IMAGE */
-.advance-technoloy-in-service-page-bg{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-/* DARK OVERLAY */
-.advance-technoloy-in-service-page-dark{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.8));
-  z-index:1;
-}
-
-/* FRONT */
-.advance-technoloy-in-service-page-front{
-  position:absolute;
-  bottom:30px;
-  left:30px;
-  color:white;
+.fitness-slide.right{
+  transform:translate(50%,-50%) rotateY(-28deg) scale(.9);
   z-index:2;
-  transition:.4s;
 }
 
-.advance-technoloy-in-service-page-icon{
+.fitness-carousel-nav{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  margin-top:60px;
+}
+
+.fitness-carousel-nav button{
   width:55px;
   height:55px;
-  background:#0d6efd;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:24px;
-  margin-bottom:15px;
-}
-
-/* HOVER PANEL */
-.advance-technoloy-in-service-page-hover{
-  position:absolute;
-  inset:0;
-  background:rgba(13,102,253,.96);
-  padding:35px;
-  color:white;
-  z-index:3;
-  transform:translateY(100%);
-  transition:.45s ease;
-  box-sizing:border-box;
-  overflow-y:auto;
-}
-
-/* HOVER EFFECT */
-.advance-technoloy-in-service-page-card-inner:hover 
-.advance-technoloy-in-service-page-hover{
-  transform:translateY(0);
-}
-
-.advance-technoloy-in-service-page-card-inner:hover 
-.advance-technoloy-in-service-page-front{
-  opacity:0;
-  transform:translateY(30px);
-}
-
-.advance-technoloy-in-service-page{
-  padding:80px 20px;
-  background:#f4f7ff;
-}
-
-.advance-technoloy-in-service-page-container{
-  max-width:1200px;
-  margin:auto;
-}
-
-.advance-technoloy-in-service-page-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:30px;
-}
-
-
-
-
-
-.enterprise-custome-softawere-devlopment-software-service-page-pagination-section{
-  padding:80px 40px;
-  background:#fff;
-}
-
-.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
-.software-pagination-wrapper{
-  max-width:1400px;
-  margin:auto;
-  position:relative;
-}
-
-.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
-.software-pagination-window{
-  overflow:hidden;
-}
-
-.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
-.software-pagination-track{
-  display:flex;
-  gap:30px;
-  transition:.6s ease;
-}
-
-/* CARD */
-.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
-.software-page-card{
-  flex:0 0 25%;
-  max-width:25%;
-  border:2px solid #eee;
-  border-radius:25px;
-  padding:40px 30px;
-  background:#fff;
-  box-sizing:border-box;
-}
-
-/* Icon animation */
-.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
-.software-page-card img{
-  width:60px;
-  margin-bottom:25px;
-  animation:softMoveReverse 4s ease-in-out infinite;
-}
-
-@keyframes softMoveReverse{
-  0%   { transform:translate(0,0); }
-  25%  { transform:translate(-2px, -2px); }
-  50%  { transform:translate(0, -3px); }
-  75%  { transform:translate(2px, -2px); }
-  100% { transform:translate(0,0); }
-}
-
-/* Pagination buttons */
-.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
-.software-page-btn{
-  position:absolute;
-  bottom:-70px;
-  width:55px;
-  height:55px;
-  border-radius:50%;
-  border:1px solid #ddd;
-  background:#fff;
-  font-size:26px;
-  cursor:pointer;
-}
-
-.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
-.software-page-btn.prev{
-  left:50%;
-  transform:translateX(-70px);
-}
-
-.enterprise-custome-softawere-devlopment-software-service-page-pagination-section 
-.software-page-btn.next{
-  left:50%;
-  transform:translateX(20px);
-}
-
-
-
-.apptunix-footer{
-  background: radial-gradient(circle at top left,#0b1d3a,#020814);
-  padding:80px 20px;
-  color:#fff;
-  font-family:Arial, Helvetica, sans-serif;
-}
-
-.footer-container{
-  max-width:1400px;
-  margin:auto;
-  display:grid;
-  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr;
-  gap:50px;
-}
-
-.footer-col h4{
-  margin-bottom:20px;
-  font-size:18px;
-}
-
-.footer-col ul{
-  list-style:none;
-  padding:0;
-}
-
-.footer-col ul li{
-  margin-bottom:14px;
-}
-
-.footer-col ul li a{
-  color:#cfd8e3;
-  text-decoration:none;
-  font-size:15px;
-  line-height:1.6;
-}
-
-.footer-col ul li a:hover{
-  color:#0a7cff;
-}
-
-.footer-col .highlight{
-  color:#0a7cff;
-}
-
-.brand .logo{
-  font-size:34px;
-  font-weight:700;
-  margin-bottom:15px;
-}
-
-.brand p{
-  color:#cfd8e3;
-  margin-bottom:25px;
-}
-
-.footer-btn{
-  display:inline-block;
-  background:#0a7cff;
-  padding:12px 28px;
-  border-radius:30px;
-  color:#fff;
-  text-decoration:none;
-  font-weight:600;
-  margin-bottom:25px;
-}
-
-.sales{
-  margin:20px 0;
-}
-
-.sales a{
-  display:block;
-  margin-top:5px;
-  color:#fff;
-}
-
-.dmca{
-  margin-top:20px;
-  width:120px;
-}
-
-.subscribe p{
-  margin-bottom:15px;
-  color:#cfd8e3;
-}
-
-.subscribe-form{
-  display:flex;
-  margin-bottom:10px;
-}
-
-.subscribe-form input{
-  flex:1;
-  padding:12px;
   border:none;
-  outline:none;
-  border-radius:6px 0 0 6px;
-}
-
-.subscribe-form button{
-  background:#0a7cff;
-  color:#fff;
-  border:none;
-  padding:12px 20px;
-  border-radius:0 6px 6px 0;
-  cursor:pointer;
-}
-
-.subscribe small{
-  display:block;
-  margin-bottom:20px;
-  color:#8aa0b6;
-}
-
-.social{
-  display:flex;
-  gap:12px;
-}
-
-.social a{
-  width:38px;
-  height:38px;
   border-radius:50%;
-  background:#0a7cff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  background:#111;
   color:#fff;
-  text-decoration:none;
-}
-
-
-
-
-
-
-
-.brand-slider-section{
-  background:#000;
-  padding:80px 0;
-  overflow:hidden;
-}
-
-.brand-slider-section h2{
-  text-align:center;
-  color:#fff;
-  font-size:42px;
-  margin-bottom:50px;
-  font-weight:700;
-  line-height:1.3;
-}
-
-/* main slider */
-.brand-slider{
-  width:100%;
-  overflow:hidden;
-}
-
-/* moving track */
-.brand-track{
-  display:flex;
-  width:max-content;
-  animation:scroll 20s linear infinite;
-}
-
-/* pause on hover */
-.brand-slider:hover .brand-track{
-  animation-play-state:paused;
-}
-
-/* each logo card */
-.brand-item{
-  min-width:220px;
-  height:120px;
-  background:#fff;
-  border-radius:18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin:0 15px;
-  box-shadow:0 0 30px rgba(255,255,255,.15);
-}
-
-.brand-item img{
-  max-width:150px;
-  max-height:70px;
-  object-fit:contain;
-}
-
-/* animation */
-@keyframes scroll{
-  0%{ transform:translateX(0); }
-  100%{ transform:translateX(-50%); }
-}
-
-/* responsive */
-@media(max-width:768px){
-  .brand-item{
-    min-width:170px;
-    height:90px;
-  }
-
-  .brand-slider-section h2{
-    font-size:28px;
-  }
-}
-
-
-
-
-.enterprise-custom-software-devlopment-software-service-page-feature-slider{
-  width:100%;
-  padding:80px 0;
-  overflow:hidden;
-}
-
-/* these names already used by your JS */
-.slides{
-  display:flex;
-}
-
-.slide{
-  min-width:33.33%;
-  padding:15px;
-}
-
-/* glass card */
-.glass-feature-card{
-  background:rgba(255,255,255,.95);
-  border-radius:25px;
-  padding:40px;
-  height:100%;
-  box-shadow:0 20px 60px rgba(0,0,0,.15);
-}
-
-.glass-feature-card .icon{
-  width:60px;
-  margin-bottom:20px;
-}
-
-.glass-feature-card h3{
-  font-size:24px;
-  margin-bottom:15px;
-}
-
-.glass-feature-card p{
-  font-size:15px;
-  line-height:1.6;
-  color:#555;
-}
-
-/* image cards */
-.image-feature-card{
-  position:relative;
-  height:100%;
-  border-radius:25px;
-  overflow:hidden;
-}
-
-.image-feature-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.feature-overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to top,rgba(0,0,0,.7),transparent);
-  display:flex;
-  align-items:flex-end;
-  padding:30px;
-}
-
-.feature-overlay h3{
-  color:#fff;
-  font-size:24px;
+  font-size:28px;
+  cursor:pointer;
 }
 
 
 </style>
+</head>
+
+
+
 <body>
 
+<section class="fitness-app-clone-carousel">
 
+  <div class="fitness-carousel-track">
 
-
-
-<!-- VIDEO BANNER -->
-<div class="buid-service-videosection-service-page-video-banner"
-     id="buid-service-videosection-service-page-videoTrigger">
-
-  <img src="assets/images/software-banner.jpg" alt="Software Video">
-
-  <div class="buid-service-videosection-service-page-play-btn">
-    ▶
-  </div>
-</div>
-
-<!-- VIDEO POPUP -->
-<div class="buid-service-videosection-service-page-video-popup"
-     id="buid-service-videosection-service-page-videoPopup">
-
-  <div class="buid-service-videosection-service-page-video-popup-content">
-
-    <span class="buid-service-videosection-service-page-close-video">
-      &times;
-    </span>
-
-    <iframe
-      id="buid-service-videosection-service-page-videoFrame"
-      src=""
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe>
-
-  </div>
-</div>
-<!-- VIDEO POPUP -->
-
-
-
-<div class="process-accordion-servicepage">
-
-  <!-- 1. DISCOVERY -->
-  <div class="process-item-servicepage active">
-    <div class="process-title-servicepage">
-      <h3>Discovery</h3>
-      <span class="arrow">⌄</span>
+    <!-- Slide 1 -->
+    <div class="fitness-slide active">
+      <img src="assets/images/noom.jpg">
+      <h3>Noom App Clone</h3>
+      <p>
+        Want to create a weight loss app? With our Noom App Clone,
+        you get personalized health plans, habit tracking and
+        behavioral insights for a healthier lifestyle.
+      </p>
     </div>
 
-    <div class="process-content-servicepage">
-      <div class="process-blackbox-servicepage">
-
-        <div class="process-blackbox-left-servicepage">
-          <h4>Discovery</h4>
-          <p>
-            In the discovery phase, we understand your business goals,
-            requirements, and challenges to create a strong project foundation.
-          </p>
-        </div>
-
-        <div class="process-blackbox-right-servicepage">
-          <ul>
-            <li>Requirements Gathering</li>
-            <li>Business Analysis</li>
-            <li>Solution Mapping</li>
-            <li>Technology Evaluation</li>
-          </ul>
-        </div>
-
-      </div>
+    <!-- Slide 2 -->
+    <div class="fitness-slide">
+      <img src="assets/images/fitbit.jpg">
+      <h3>Fitbit App Clone</h3>
+      <p>
+        Our Fitbit App Clone lets users track activities, heart rate,
+        sleep, calories and health goals with real-time AI insights.
+      </p>
     </div>
+
+    <!-- Slide 3 -->
+    <div class="fitness-slide">
+      <img src="assets/images/myfitnesspal.jpg">
+      <h3>MyFitnessPal App Clone</h3>
+      <p>
+        Launch a nutrition & calorie tracking app like MyFitnessPal
+        with food logging, meal plans and fitness progress tracking.
+      </p>
+    </div>
+
   </div>
 
-  <!-- 2. DESIGN -->
-  <div class="process-item-servicepage">
-    <div class="process-title-servicepage">
-      <h3>Design</h3>
-      <span class="arrow">⌄</span>
-    </div>
-
-    <div class="process-content-servicepage">
-      <div class="process-blackbox-servicepage">
-
-        <div class="process-blackbox-left-servicepage">
-          <h4>Design</h4>
-          <p>
-            Our design team creates intuitive UI/UX designs that ensure
-            seamless user experience and visual consistency.
-          </p>
-        </div>
-
-        <div class="process-blackbox-right-servicepage">
-          <ul>
-            <li>Wireframing</li>
-            <li>UI/UX Design</li>
-            <li>Prototype Creation</li>
-            <li>Design Validation</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- 3. DEVELOPMENT -->
-  <div class="process-item-servicepage">
-    <div class="process-title-servicepage">
-      <h3>Development</h3>
-      <span class="arrow">⌄</span>
-    </div>
-
-    <div class="process-content-servicepage">
-      <div class="process-blackbox-servicepage">
-
-        <div class="process-blackbox-left-servicepage">
-          <h4>Development</h4>
-          <p>
-            In this phase, our developers build scalable and secure software
-            solutions using modern technologies and best practices.
-          </p>
-        </div>
-
-        <div class="process-blackbox-right-servicepage">
-          <ul>
-            <li>Custom Development</li>
-            <li>Testing</li>
-            <li>Iteration</li>
-            <li>Debugging & Optimization</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- 4. DEPLOYMENT -->
-  <div class="process-item-servicepage">
-    <div class="process-title-servicepage">
-      <h3>Deployment</h3>
-      <span class="arrow">⌄</span>
-    </div>
-
-    <div class="process-content-servicepage">
-      <div class="process-blackbox-servicepage">
-
-        <div class="process-blackbox-left-servicepage">
-          <h4>Deployment</h4>
-          <p>
-            After thorough testing, we deploy the solution and ensure
-            smooth launch with ongoing support and maintenance.
-          </p>
-        </div>
-
-        <div class="process-blackbox-right-servicepage">
-          <ul>
-            <li>Server Setup</li>
-            <li>Production Deployment</li>
-            <li>Performance Monitoring</li>
-            <li>Post-launch Support</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<section class="enterprise-custome-softawere-devlopment-software-service-page-pagination-section">
-
-  <div class="software-pagination-wrapper">
-
-    <button class="software-page-btn prev">←</button>
-
-    <div class="software-pagination-window">
-      <div class="software-pagination-track">
-
-        <div class="software-page-card">
-          <img src="./assets/images/aws1_icon.png">
-          <h3>Document management</h3>
-          <p>Organize, store, and secure your documents with solutions that enable easy access and collaboration.</p>
-        </div>
-
-        <div class="software-page-card">
-          <img src="./assets/images/aws1_icon.png">
-          <h3>CRM</h3>
-          <p>Build stronger customer relationships with tools that manage interactions, track sales, and provide insights.</p>
-        </div>
-
-        <div class="software-page-card">
-          <img src="./assets/images/aws1_icon.png">
-          <h3>Marketing & advertising</h3>
-          <p>Plan and execute marketing campaigns with tools that offer automation, analytics, and personalization.</p>
-        </div>
-
-        <div class="software-page-card">
-          <img src="./assets/images/aws1_icon.png">
-          <h3>Web portals</h3>
-          <p>Create secure and user-friendly web portals for customers, employees, or partners.</p>
-        </div>
-
-        <div class="software-page-card">
-          <img src="./assets/images/aws1_icon.png">
-          <h3>ERP</h3>
-          <p>Integrate finance, HR, and operations into a single system to improve efficiency.</p>
-        </div>
-
-        <div class="software-page-card">
-          <img src="./assets/images/aws1_icon.png">
-          <h3>HR Software</h3>
-          <p>Simplify recruitment, employee management, and performance tracking.</p>
-        </div>
-        <div class="software-page-card">
-          <img src="./assets/images/aws1_icon.png">
-          <h3>HR Software</h3>
-          <p>Simplify recruitment, employee management, and performance tracking.</p>
-        </div>
-        <div class="software-page-card">
-          <img src="./assets/images/aws1_icon.png">
-          <h3>HR Software</h3>
-          <p>Simplify recruitment, employee management, and performance tracking.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <button class="software-page-btn next">→</button>
-
+  <div class="fitness-carousel-nav">
+    <button id="prev">‹</button>
+    <button id="next">›</button>
   </div>
 
 </section>
@@ -1000,235 +140,6 @@
 
 
 
-<footer class="apptunix-footer">
-  <div class="footer-container">
-
-    <!-- BRAND -->
-    <div class="footer-col brand">
-      <h2 class="logo">Apptunix</h2>
-      <p>Ready to transform your business digitally?</p>
-
-      <a href="#" class="footer-btn">Contact Now!</a>
-
-      <div class="sales">
-        <strong>For sales enquiries:</strong>
-        <a href="mailto:sales@apptunix.com">sales@apptunix.com</a>
-      </div>
-
-      <img src="assets/images/dmca.png" class="dmca" alt="DMCA">
-    </div>
-
-    <!-- RECENT GUIDES -->
-    <div class="footer-col">
-      <h4>Recent e-guides</h4>
-      <ul>
-        <li><a href="#">App Monetization Strategies: How to Make Money From an App?</a></li>
-        <li><a href="#">A Comprehensive Guide To Mobile App Development in 2025 – 2026</a></li>
-        <li><a href="#">Telemedicine 2.0 – A Comprehensive Guide</a></li>
-        <li><a href="#">Electric Vehicle Software Development – A Comprehensive Guide</a></li>
-      </ul>
-    </div>
-
-    <!-- SERVICES -->
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#">App Development Services</a></li>
-        <li><a href="#">AI Development Services</a></li>
-        <li><a href="#">Software Development Services</a></li>
-        <li><a href="#">Web App Development</a></li>
-        <li><a href="#" class="highlight">Hire Software Developers</a></li>
-        <li><a href="#">Hire App Developers</a></li>
-        <li><a href="#">Digital Marketing Services</a></li>
-      </ul>
-    </div>
-
-    <!-- EXPERTISE -->
-    <div class="footer-col">
-      <h4>Expertise</h4>
-      <ul>
-        <li><a href="#">White Label App Development</a></li>
-        <li><a href="#">Ecommerce App Development</a></li>
-        <li><a href="#">Blockchain App Development</a></li>
-        <li><a href="#">Fintech App Development</a></li>
-        <li><a href="#">AR / VR App Development</a></li>
-        <li><a href="#">Food Delivery App Development</a></li>
-        <li><a href="#">Grocery Delivery App Development</a></li>
-      </ul>
-    </div>
-
-    <!-- SUBSCRIBE -->
-    <div class="footer-col subscribe">
-      <h4>Subscribe US</h4>
-      <p>Make the right business move.</p>
-
-      <form class="subscribe-form">
-        <input type="email" placeholder="Email address">
-        <button type="submit">Send</button>
-      </form>
-
-      <small>Your email ID is confidential.</small>
-
-      <div class="social">
-        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-      </div>
-    </div>
-
-  </div>
-</footer>
-
-
-
-
-
-<section class="brand-slider-section">
-  <h2>
-    Custom Software Development Solutions<br>
-    Developed By Apptunix Have Been Featured In
-  </h2>
-
-  <div class="brand-slider">
-    <div class="brand-track">
-
-      <div class="brand-item"><img src="assets/images/khaleej.png"></div>
-      <div class="brand-item"><img src="assets/images/verge.png"></div>
-      <div class="brand-item"><img src="assets/images/techcrunch.png"></div>
-      <div class="brand-item"><img src="assets/images/cnn.png"></div>
-      <div class="brand-item"><img src="assets/images/forbes.png"></div>
-      <div class="brand-item"><img src="assets/images/inc.png"></div>
-
-      <!-- duplicate for infinite loop -->
-      <div class="brand-item"><img src="assets/images/khaleej.png"></div>
-      <div class="brand-item"><img src="assets/images/verge.png"></div>
-      <div class="brand-item"><img src="assets/images/techcrunch.png"></div>
-      <div class="brand-item"><img src="assets/images/cnn.png"></div>
-      <div class="brand-item"><img src="assets/images/forbes.png"></div>
-      <div class="brand-item"><img src="assets/images/inc.png"></div>
-
-    </div>
-  </div>
-</section>
-
-
-<section class="enterprise-custom-software-devlopment-software-service-page-feature-slider">
-
-  <div class="slides">   <!-- this matches your existing JS -->
-
-    <!-- SLIDE 0 -->
-    <div class="slide active">
-      <div class="glass-feature-card">
-        <img src="./assets/images/security-icon.png" class="icon">
-        <h3>Focus on Security and Scalability</h3>
-        <p>
-          Our custom software development company prioritizes building software with
-          robust security measures to ensure software integrity. Our custom software
-          development services include designing solutions that are scalable and can
-          accommodate future growth.
-        </p>
-      </div>
-    </div>
-
-    <!-- SLIDE 1 -->
-    <div class="slide">
-      <div class="image-feature-card">
-        <img src="./assets/images/integration.jpg">
-        <div class="feature-overlay">
-          <h3>Experience with Complex<br>Integrations</h3>
-        </div>
-      </div>
-    </div>
-
-    <!-- SLIDE 2 -->
-    <div class="slide">
-      <div class="image-feature-card">
-        <img src="./assets/images/performance.jpg">
-        <div class="feature-overlay">
-          <h3>Commitment to Performance<br>Optimization</h3>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-
-<style>
-.choose-the-right-model-service-page{
-  padding:70px 20px;
-  background:#f6f8fc;
-}
-
-/* Tabs */
-.choose-the-right-model-service-page-tabs{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  margin-bottom:40px;
-}
-
-.choose-the-right-model-service-page-tab{
-  padding:14px 36px;
-  border:2px solid #0d6efd;
-  border-radius:10px;
-  font-size:18px;
-  cursor:pointer;
-  transition:.3s;
-  background:#fff;
-}
-
-.choose-the-right-model-service-page-tab.active,
-.choose-the-right-model-service-page-tab:hover{
-  background:#0d6efd;
-  color:#fff;
-}
-
-/* Content */
-.choose-the-right-model-service-page-content{
-  display:none;
-  background:#fff;
-  padding:40px;
-  border-radius:20px;
-  box-shadow:0 10px 40px rgba(0,0,0,.08);
-}
-
-.choose-the-right-model-service-page-content.active{
-  display:block;
-}
-
-.choose-the-right-model-service-page-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  align-items:center;
-}
-
-.choose-the-right-model-service-page-image img{
-  width:100%;
-  border-radius:20px;
-}
-
-.choose-the-right-model-service-page-text h2{
-  font-size:32px;
-  margin-bottom:15px;
-}
-
-.choose-the-right-model-service-page-text ul{
-  list-style:none;
-  padding:0;
-}
-
-.choose-the-right-model-service-page-text li{
-  font-size:18px;
-  margin:12px 0;
-}
-
-
-</style>
 
 
 
@@ -1249,123 +160,37 @@
 
 
 
-<!-- <script>
-const track = document.querySelector(".carousel-track");
-const cards = document.querySelectorAll(".focus-card");
-let index = 1;
+
+<script>
+const slides = document.querySelectorAll(".fitness-slide");
+let index = 0;
 
 function update(){
-  const offset = -(index * 390) + 390;
-  track.style.transform = `translateX(${offset}px)`;
+  slides.forEach(s=>s.classList.remove("active","left","right"));
 
-  cards.forEach(c=>c.classList.remove("active"));
-  cards[index].classList.add("active");
+  slides[index].classList.add("active");
+
+  let left = (index - 1 + slides.length) % slides.length;
+  let right = (index + 1) % slides.length;
+
+  slides[left].classList.add("left");
+  slides[right].classList.add("right");
 }
+
+document.getElementById("next").onclick = () => {
+  index = (index + 1) % slides.length;
+  update();
+};
+
+document.getElementById("prev").onclick = () => {
+  index = (index - 1 + slides.length) % slides.length;
+  update();
+};
 
 update();
-
-document.querySelector(".right").onclick = () => {
-  if(index < cards.length - 1){
-    index++;
-    update();
-  }
-}
-
-document.querySelector(".left").onclick = () => {
-  if(index > 0){
-    index--;
-    update();
-  }
-}
-
-</script> -->
-
-
-<script>
-const section = document.querySelector(
-".enterprise-custome-softawere-devlopment-software-service-page-pagination-section"
-);
-
-const track = section.querySelector(".software-pagination-track");
-const cards = section.querySelectorAll(".software-page-card");
-const next = section.querySelector(".software-page-btn.next");
-const prev = section.querySelector(".software-page-btn.prev");
-
-const perPage = 4;
-let page = 0;
-
-function moveSlider(){
-  const cardWidth = cards[0].offsetWidth + 30;
-  track.style.transform = `translateX(-${page * perPage * cardWidth}px)`;
-}
-
-next.addEventListener("click", ()=>{
-  const maxPage = Math.ceil(cards.length / perPage) - 1;
-  if(page < maxPage){
-    page++;
-    moveSlider();
-  }
-});
-
-prev.addEventListener("click", ()=>{
-  if(page > 0){
-    page--;
-    moveSlider();
-  }
-});
-</script>
-  
-
-
-
-
-
-<script>
-const buidServiceVideoTrigger =
-  document.getElementById("buid-service-videosection-service-page-videoTrigger");
-
-const buidServiceVideoPopup =
-  document.getElementById("buid-service-videosection-service-page-videoPopup");
-
-const buidServiceCloseBtn =
-  document.querySelector(".buid-service-videosection-service-page-close-video");
-
-const buidServiceVideoFrame =
-  document.getElementById("buid-service-videosection-service-page-videoFrame");
-
-buidServiceVideoTrigger.addEventListener("click",()=>{
-  buidServiceVideoPopup.style.display="flex";
-  buidServiceVideoFrame.src =
-    "https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1";
-});
-
-buidServiceCloseBtn.addEventListener("click",()=>{
-  buidServiceVideoPopup.style.display="none";
-  buidServiceVideoFrame.src="";
-});
-
-buidServiceVideoPopup.addEventListener("click",(e)=>{
-  if(e.target === buidServiceVideoPopup){
-    buidServiceVideoPopup.style.display="none";
-    buidServiceVideoFrame.src="";
-  }
-});
 </script>
 
-<script>
-document.querySelectorAll(".process-title-servicepage").forEach(title=>{
-  title.addEventListener("click",()=>{
 
-    const item = title.closest(".process-item-servicepage");
-
-    document.querySelectorAll(".process-item-servicepage").forEach(i=>{
-      i.classList.remove("active");
-    });
-
-    item.classList.add("active");
-  });
-});
-</script>
 
 
 
