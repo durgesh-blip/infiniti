@@ -26,6 +26,7 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/custome.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 
 
@@ -351,6 +352,10 @@
         <!-- LEFT -->
         <div class="logo header-logo"><img src="./assets/images/infiniti-logo.png" alt=""></div>
         <!-- CENTER -->
+         <div class="mobile-toggle">
+  <i class="fa-solid fa-bars"></i>
+</div>
+
         <ul class="menu">
             <li><a href="#">Portfolio</a></li>
             <li>
@@ -3688,6 +3693,21 @@ closeBtn.addEventListener("click", closeModal);
             tab.addEventListener("mouseover", () => activate(tab));
         });
     </script>
+
+
+
+
+
+<script>
+  const toggle = document.querySelector('.mobile-toggle');
+  const menu = document.querySelector('.menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+</script>
+
+
 
 </body>
 
