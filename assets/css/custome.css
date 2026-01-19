@@ -636,6 +636,11 @@ body{
 .section-separator .rn-service {
     overflow: visible;
 }
+
+
+/* end  */
+
+
  .industry-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
